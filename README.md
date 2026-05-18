@@ -279,3 +279,13 @@ Metric scope: the 102 incidents are support-validation incidents generated from 
 - [Escalation Taxonomy](docs/escalation_taxonomy.md)
 - [Reviewer Workflow](docs/reviewer_workflow.md)
 
+
+
+## Product / Full-Stack Proof Layer
+
+- [Dashboard Product Flow](docs/dashboard_product_flow.md)
+- [OpenAPI Summary](docs/openapi/agentgrid_openapi_summary.md)
+- [C# Minimal API Proof Layer](docs/dotnet_proof/csharp_minimal_api_proof_layer.md)
+- [Azure Deployment Notes](docs/integrations/azure_deployment_notes.md)
+- [M365 / Teams / Graph Integration Notes](docs/integrations/m365_teams_graph_integration_notes.md)
+
