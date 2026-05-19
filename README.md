@@ -289,3 +289,12 @@ Metric scope: the 102 incidents are support-validation incidents generated from 
 - [Azure Deployment Notes](docs/integrations/azure_deployment_notes.md)
 - [M365 / Teams / Graph Integration Notes](docs/integrations/m365_teams_graph_integration_notes.md)
 
+
+
+## C# / .NET Proof Layer
+
+- [C# Minimal API Proof](csharp_service_demo/README.md)
+- [C# API Contract](csharp_service_demo/docs/api_contract.md)
+- [SQL Server Schema Notes](csharp_service_demo/docs/sql_server_schema.md)
+- [Azure Deployment Notes](csharp_service_demo/docs/azure_deployment_notes.md)
+
