@@ -337,3 +337,23 @@ Metric scope: the 102 incidents are support-validation incidents generated from 
 - [SQL Server Schema Notes](csharp_service_demo/docs/sql_server_schema.md)
 - [Azure Deployment Notes](csharp_service_demo/docs/azure_deployment_notes.md)
 
+
+
+## Visual Proof
+
+![AgentGrid Architecture](screenshots/architecture_hero.png)
+
+| Proof | Screenshot |
+|---|---|
+| Live Dashboard | ![Dashboard](screenshots/dashboard.png) |
+| Workflow Trace | ![Workflow Trace](screenshots/workflow_trace.png) |
+| Eval Gate | ![Eval Gate](screenshots/eval_gate.png) |
+| MCP Tools | ![MCP Tools](screenshots/mcp_tools.png) |
+| Cloud Deployment | ![Cloud Run](screenshots/cloud_run.png) |
+| Trace Export | ![Trace Export](screenshots/trace_export.png) |
+| Latency / Cost | ![Latency Cost](screenshots/latency_cost_report.png) |
+
+## API Contract
+
+- [OpenAPI Export](openapi/openapi.json)
+

@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AgentGrid API",
+    "version": "1.0.0",
+    "description": "Production-style GenAI support workflow API with RAG, tools, eval gates, metrics, RBAC, audit logs, and async validation jobs."
+  },
+  "paths": {
+    "/agent/run": {
+      "post": {
+        "summary": "Run GenAI support workflow",
+        "responses": {
+          "200": {
+            "description": "Workflow result with trace, metrics, and eval decision"
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "summary": "Prometheus-style metrics",
+        "responses": {
+          "200": {
+            "description": "Metrics text output"
+          }
+        }
+      }
+    },
+    "/redis/jobs/validation": {
+      "post": {
+        "summary": "Create Redis-backed validation job",
+        "responses": {
+          "200": {
+            "description": "Queued validation job"
+          }
+        }
+      }
+    },
+    "/redis/dead-letter": {
+      "get": {
+        "summary": "List Redis dead-letter jobs",
+        "responses": {
+          "200": {
+            "description": "Dead-letter queue contents"
+          }
+        }
+      }
+    },
+    "/review/action": {
+      "post": {
+        "summary": "RBAC-protected reviewer action",
+        "responses": {
+          "200": {
+            "description": "Authorization and audit result"
+          }
+        }
+      }
+    },
+    "/audit/events": {
+      "get": {
+        "summary": "List support-decision audit events",
+        "responses": {
+          "200": {
+            "description": "Audit event list"
+          }
+        }
+      }
+    }
+  }
+}
