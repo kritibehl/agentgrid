@@ -378,3 +378,7 @@ See:
 
 benchmarks/reports/benchmark_report.md
 
+
+## System Design Notes
+
+- [Failure, State, and Scaling Notes](docs/system_design/failure_state_scaling.md)
