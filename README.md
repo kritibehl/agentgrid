@@ -1,4 +1,43 @@
-# AgentGrid: Production GenAI Support & Deployment System
+# AgentGrid — Production-Style GenAI Forward Deployment System
+
+AgentGrid models how production GenAI systems retrieve evidence, orchestrate tools, evaluate outputs, route escalations, and convert unsupported AI behavior into operational decisions.
+
+## Core Features
+
+- Multi-agent orchestration workflows
+- MCP-style tool server
+- RAG over docs/logs/runbooks
+- Evaluation gates (ship / hold / escalate)
+- Escalation routing and reviewer workflows
+- LLM-native observability
+- Cloud deployment workflows
+- Customer deployment scenarios
+- Trace exports and audit flows
+- Support-decision analytics
+
+## System Flow
+
+User query
+→ triage agent
+→ retrieval agent
+→ MCP tool execution
+→ answer generation
+→ evaluation gate
+→ ship / hold / escalate
+→ AutoOps incident analytics
+
+## Production Signals
+
+- Cloud Run-style deployment proof
+- Redis-backed async validation workflows
+- JWT/RBAC reviewer roles
+- Prometheus-style metrics
+- Trace IDs and audit logs
+- Customer deployment case studies
+- Multi-agent orchestration
+- Operational evaluation gates
+
+
 
 ```text
 Query → RAG → LangGraph → MCP tools → Eval gate → ship/hold/escalate → AutoOps event
