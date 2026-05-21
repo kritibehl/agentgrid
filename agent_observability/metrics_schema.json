@@ -1,0 +1,14 @@
+{
+  "metrics": {
+    "tokens_input": "integer",
+    "tokens_output": "integer",
+    "tokens_per_second": "float",
+    "estimated_cost_per_request": "float",
+    "latency_p50_ms": "float",
+    "latency_p95_ms": "float",
+    "retrieval_hit_rate": "float",
+    "tool_call_success_rate": "float",
+    "eval_pass_rate": "float",
+    "trace_depth": "integer"
+  }
+}

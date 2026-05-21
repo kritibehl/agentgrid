@@ -1,0 +1,13 @@
+{
+  "scenario": "enterprise_policy_assistant",
+  "customer_problem": "Enterprise user asks policy-sensitive question with incomplete evidence.",
+  "retrieved_docs": [
+    "policy guidance summary"
+  ],
+  "tool_calls": [
+    "search_docs"
+  ],
+  "answer": "Hold answer until missing policy evidence is reviewed.",
+  "eval_decision": "require_human_review",
+  "escalation": "policy_review_queue"
+}

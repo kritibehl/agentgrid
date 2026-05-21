@@ -1,0 +1,15 @@
+{
+  "scenario": "healthcare_claims_support",
+  "customer_problem": "Claims support needs AI help without unsupported benefit explanations.",
+  "retrieved_docs": [
+    "claims policy FAQ",
+    "denial code runbook"
+  ],
+  "tool_calls": [
+    "search_docs",
+    "create_action_plan"
+  ],
+  "answer": "Provide evidence-grounded claim status and request missing denial code if unavailable.",
+  "eval_decision": "hold",
+  "escalation": "reviewer required if benefit explanation lacks source evidence"
+}

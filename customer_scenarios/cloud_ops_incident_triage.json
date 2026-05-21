@@ -1,0 +1,16 @@
+{
+  "scenario": "cloud_ops_incident_triage",
+  "customer_problem": "Cloud ops team needs incident summary from logs, metrics, and runbooks.",
+  "retrieved_docs": [
+    "db timeout runbook",
+    "deployment failure notes"
+  ],
+  "tool_calls": [
+    "analyze_logs",
+    "query_metrics",
+    "summarize_incident"
+  ],
+  "answer": "Latency spike likely related to DB timeout and retry amplification; root cause framed as hypothesis.",
+  "eval_decision": "ship",
+  "escalation": "escalate if p95 remains above threshold"
+}

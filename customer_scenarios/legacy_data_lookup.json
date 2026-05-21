@@ -1,0 +1,14 @@
+{
+  "scenario": "legacy_data_lookup",
+  "customer_problem": "Support user asks for answer requiring legacy data lookup.",
+  "retrieved_docs": [
+    "legacy system integration notes"
+  ],
+  "tool_calls": [
+    "search_docs",
+    "query_metrics"
+  ],
+  "answer": "Provide available data context and identify missing legacy lookup evidence.",
+  "eval_decision": "hold",
+  "escalation": "request system-of-record confirmation"
+}

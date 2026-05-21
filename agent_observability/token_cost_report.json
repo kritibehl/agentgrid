@@ -1,0 +1,11 @@
+{
+  "runs": 25,
+  "avg_tokens_input": 120,
+  "avg_tokens_output": 85,
+  "tokens_per_second_range": [
+    700,
+    1200
+  ],
+  "estimated_cost_per_request_usd": 0.002,
+  "mode": "mock public demo with real-model proof artifact support"
+}

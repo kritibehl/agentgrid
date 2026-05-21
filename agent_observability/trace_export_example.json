@@ -1,0 +1,15 @@
+{
+  "trace_id": "trace_fde_001",
+  "run_id": "run_fde_001",
+  "steps": [
+    "triage_agent",
+    "retrieval_agent",
+    "tool_agent",
+    "eval_agent",
+    "escalation_agent"
+  ],
+  "decision": "ship",
+  "retrieval_hit_rate": 1.0,
+  "tool_call_success_rate": 1.0,
+  "trace_depth": 5
+}
