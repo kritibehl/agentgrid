@@ -357,3 +357,24 @@ Metric scope: the 102 incidents are support-validation incidents generated from 
 
 - [OpenAPI Export](openapi/openapi.json)
 
+
+
+## Controlled Benchmark Experiments
+
+AgentGrid includes controlled evaluation workflows comparing:
+
+- Gemini Flash
+- GPT-4o-mini
+- Claude Haiku
+
+Across:
+- retrieval grounding
+- unsupported-answer risk
+- latency
+- estimated cost/request
+- tool-call quality
+
+See:
+
+benchmarks/reports/benchmark_report.md
+
