@@ -1,0 +1,9 @@
+Given:
+- latency spike
+- retry storm
+- degraded dependency health
+
+Recommend:
+- operational investigation steps
+- metrics to inspect
+- escalation conditions

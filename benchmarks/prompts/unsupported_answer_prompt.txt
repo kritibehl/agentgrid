@@ -1,0 +1,5 @@
+A user asks why deployment failed, but retrieved evidence is incomplete.
+
+Do not invent a fix.
+Clearly identify missing evidence.
+Recommend escalation or additional diagnostics if necessary.

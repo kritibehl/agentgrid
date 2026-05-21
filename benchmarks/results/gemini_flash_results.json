@@ -1,0 +1,21 @@
+{
+  "model": "Gemini Flash",
+  "runs": [
+    {
+      "scenario": "retrieval_grounding",
+      "groundedness_score": 0.92,
+      "unsupported_answer": false,
+      "latency_ms": 820,
+      "estimated_cost_usd": 0.0021,
+      "tool_call_quality": 0.90
+    },
+    {
+      "scenario": "unsupported_answer",
+      "groundedness_score": 0.89,
+      "unsupported_answer": false,
+      "latency_ms": 790,
+      "estimated_cost_usd": 0.0020,
+      "tool_call_quality": 0.88
+    }
+  ]
+}

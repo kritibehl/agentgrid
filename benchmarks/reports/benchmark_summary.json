@@ -1,0 +1,26 @@
+[
+  {
+    "model": "GPT-4o-mini",
+    "avg_groundedness": 0.93,
+    "avg_latency_ms": 960.0,
+    "avg_cost_usd": 0.0029,
+    "avg_tool_call_quality": 0.92,
+    "unsupported_answer_count": 0
+  },
+  {
+    "model": "Gemini Flash",
+    "avg_groundedness": 0.905,
+    "avg_latency_ms": 805.0,
+    "avg_cost_usd": 0.002,
+    "avg_tool_call_quality": 0.89,
+    "unsupported_answer_count": 0
+  },
+  {
+    "model": "Claude Haiku",
+    "avg_groundedness": 0.89,
+    "avg_latency_ms": 745.0,
+    "avg_cost_usd": 0.0017,
+    "avg_tool_call_quality": 0.86,
+    "unsupported_answer_count": 0
+  }
+]

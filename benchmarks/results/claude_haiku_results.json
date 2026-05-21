@@ -1,0 +1,21 @@
+{
+  "model": "Claude Haiku",
+  "runs": [
+    {
+      "scenario": "retrieval_grounding",
+      "groundedness_score": 0.90,
+      "unsupported_answer": false,
+      "latency_ms": 760,
+      "estimated_cost_usd": 0.0018,
+      "tool_call_quality": 0.87
+    },
+    {
+      "scenario": "unsupported_answer",
+      "groundedness_score": 0.88,
+      "unsupported_answer": false,
+      "latency_ms": 730,
+      "estimated_cost_usd": 0.0017,
+      "tool_call_quality": 0.85
+    }
+  ]
+}

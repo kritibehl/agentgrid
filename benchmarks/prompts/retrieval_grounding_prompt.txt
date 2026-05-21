@@ -1,0 +1,6 @@
+Deployment logs show repeated DB timeout errors and retry amplification.
+
+Using only retrieved operational evidence:
+- summarize the likely issue
+- avoid unsupported root-cause claims
+- recommend next operational steps

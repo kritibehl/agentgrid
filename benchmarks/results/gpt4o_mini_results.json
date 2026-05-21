@@ -1,0 +1,21 @@
+{
+  "model": "GPT-4o-mini",
+  "runs": [
+    {
+      "scenario": "retrieval_grounding",
+      "groundedness_score": 0.95,
+      "unsupported_answer": false,
+      "latency_ms": 980,
+      "estimated_cost_usd": 0.0030,
+      "tool_call_quality": 0.93
+    },
+    {
+      "scenario": "unsupported_answer",
+      "groundedness_score": 0.91,
+      "unsupported_answer": false,
+      "latency_ms": 940,
+      "estimated_cost_usd": 0.0028,
+      "tool_call_quality": 0.91
+    }
+  ]
+}
