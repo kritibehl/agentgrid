@@ -414,3 +414,25 @@ bad GenAI support answer
 See:
 - demo_outputs/end_to_end_ai_support_incident.md
 - demo_outputs/end_to_end_ai_support_incident.json
+
+
+## Google ADK / GEAR Alignment
+
+AgentGrid includes a comparison artifact mapping its multi-agent orchestration, tool ecosystem, evaluation gates, observability, and deployment workflows to Google ADK / GEAR-style agent-system concepts.
+
+See:
+- `comparisons/google_adk_gear_comparison.md`
+
+## Unsafe Answer → RCA Walkthrough
+
+AgentGrid + AutoOps includes a 2-minute demo script showing:
+
+unsafe GenAI support answer
+→ eval-gate block
+→ escalation artifact
+→ recurring issue classification
+→ RCA
+→ product feedback
+
+See:
+- `demo_outputs/video_script/unsafe_answer_to_rca_walkthrough.md`
