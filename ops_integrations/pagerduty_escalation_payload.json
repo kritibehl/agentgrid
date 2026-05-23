@@ -1,0 +1,18 @@
+{
+  "system": "pagerduty_style_escalation",
+  "routing_key": "demo-routing-key",
+  "severity": "critical",
+  "event_action": "trigger",
+  "dedup_key": "agentgrid-trace_fde_001",
+  "payload": {
+    "summary": "AgentGrid escalation: tool-call failure blocked safe GenAI response",
+    "source": "agentgrid",
+    "component": "eval_gate",
+    "custom_details": {
+      "trace_id": "trace_fde_001",
+      "decision": "escalate",
+      "reason": "tool_call_failure",
+      "support_action": "Route to engineering owner"
+    }
+  }
+}

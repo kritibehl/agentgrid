@@ -1,0 +1,11 @@
+{
+  "system": "jira_style_issue",
+  "issue_type": "GenAI Support Escalation",
+  "summary": "AgentGrid escalated unsupported AI answer due to missing retrieval grounding",
+  "severity": "high",
+  "labels": ["genai-support", "retrieval", "eval-gate", "unsupported-answer"],
+  "trace_id": "trace_fde_001",
+  "decision_id": "decision_001",
+  "recommended_owner": "ai_support_engineering",
+  "engineering_summary": "Retrieved evidence was insufficient for safe answer generation. Eval gate routed the workflow to reviewer escalation."
+}

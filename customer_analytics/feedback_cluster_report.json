@@ -1,0 +1,71 @@
+{
+  "total_feedback_events": 4,
+  "issue_taxonomy_counts": {
+    "missing_runbook_context": 2,
+    "retry_amplification": 2,
+    "correct_hold": 1,
+    "latency_threshold": 1
+  },
+  "top_issue_families": [
+    [
+      "missing_runbook_context",
+      2
+    ],
+    [
+      "retry_amplification",
+      2
+    ],
+    [
+      "correct_hold",
+      1
+    ],
+    [
+      "latency_threshold",
+      1
+    ]
+  ],
+  "repeat_issue_flags": [
+    "missing_runbook_context",
+    "retry_amplification"
+  ],
+  "enriched_feedback": [
+    {
+      "event_id": "fb_001",
+      "customer": "cloud_ops_team",
+      "feedback": "Agent answer missed the DB timeout runbook and did not explain retry amplification.",
+      "trace_id": "trace_001",
+      "issue_labels": [
+        "missing_runbook_context",
+        "retry_amplification"
+      ]
+    },
+    {
+      "event_id": "fb_002",
+      "customer": "support_reviewer",
+      "feedback": "The system correctly held the answer when retrieved evidence was missing.",
+      "trace_id": "trace_002",
+      "issue_labels": [
+        "correct_hold"
+      ]
+    },
+    {
+      "event_id": "fb_003",
+      "customer": "platform_builder",
+      "feedback": "Latency guidance was useful, but the escalation condition should mention p95 threshold.",
+      "trace_id": "trace_003",
+      "issue_labels": [
+        "latency_threshold"
+      ]
+    },
+    {
+      "event_id": "fb_004",
+      "customer": "cloud_ops_team",
+      "feedback": "Another incident missed retry amplification context from the runbook.",
+      "trace_id": "trace_004",
+      "issue_labels": [
+        "missing_runbook_context",
+        "retry_amplification"
+      ]
+    }
+  ]
+}

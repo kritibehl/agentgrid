@@ -1,0 +1,14 @@
+{
+  "system": "slack_style_alert",
+  "channel": "#ai-support-review",
+  "text": "AgentGrid HOLD decision requires review",
+  "blocks": [
+    {
+      "type": "section",
+      "text": {
+        "type": "mrkdwn",
+        "text": "*AgentGrid support decision:* HOLD\n*Reason:* missing_retrieval_grounding\n*Trace:* trace_fde_001"
+      }
+    }
+  ]
+}

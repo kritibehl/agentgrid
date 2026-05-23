@@ -1,0 +1,26 @@
+[
+  {
+    "event_id": "fb_001",
+    "customer": "cloud_ops_team",
+    "feedback": "Agent answer missed the DB timeout runbook and did not explain retry amplification.",
+    "trace_id": "trace_001"
+  },
+  {
+    "event_id": "fb_002",
+    "customer": "support_reviewer",
+    "feedback": "The system correctly held the answer when retrieved evidence was missing.",
+    "trace_id": "trace_002"
+  },
+  {
+    "event_id": "fb_003",
+    "customer": "platform_builder",
+    "feedback": "Latency guidance was useful, but the escalation condition should mention p95 threshold.",
+    "trace_id": "trace_003"
+  },
+  {
+    "event_id": "fb_004",
+    "customer": "cloud_ops_team",
+    "feedback": "Another incident missed retry amplification context from the runbook.",
+    "trace_id": "trace_004"
+  }
+]
