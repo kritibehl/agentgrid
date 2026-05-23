@@ -115,7 +115,9 @@ def build_report():
         "rca_and_product_feedback": rca
     }
 
-    Path("demo_outputs/end_to_end_ai_support_incident.json").write_text(json.dumps(payload, indent=2))
+    Path("demo_outputs/end_to_end_ai_support_incident.json").write_text(
+        json.dumps(payload, indent=2)
+    )
 
     md = f"""# End-to-End AI Support Incident Demo
 
@@ -125,86 +127,64 @@ A GenAI support workflow produced an unsafe deployment explanation:
 
 > "{BAD_ANSWER_EVENT['bad_genai_answer']}"
 
-AgentGrid detected that the answer contained unsupported root-cause claims and missing retrieval grounding.
+AgentGrid detected unsupported root-cause claims and missing retrieval grounding.
 
 ## End-to-End Flow
 
-```text
 bad GenAI support answer
-→ AgentGrid detects unsupported / missing context
+→ AgentGrid detects unsupported/missing context
 → escalation artifact created
 → AutoOps classifies recurring issue
 → RCA + product feedback summary generated
-1. AgentGrid Detection
-Field	Value
-Trace ID	{agentgrid_result['trace_id']}
-Decision ID	{agentgrid_result['decision_id']}
-Final decision	{agentgrid_result['final_decision'].upper()}
-Reason	{agentgrid_result['reason']}
-Unsupported answer	{agentgrid_result['unsupported_answer']}
-Safe to ship	{agentgrid_result['eval_gate']['safe_to_ship']}
-Unsupported Claims
-database cluster was definitely overloaded
-has now recovered
-2. Escalation Artifact
-Field	Value
-System	{escalation['system']}
-Issue type	{escalation['issue_type']}
-Severity	{escalation['severity']}
-Owner	{escalation['owner']}
-Engineering Escalation Summary
 
-{escalation['engineering_escalation_summary']}
+## AgentGrid Detection
 
-3. AutoOps Classification
-Field	Value
-Incident type	{autoops_result['incident_type']}
-Severity	{autoops_result['severity']}
-Recurring issue family	{autoops_result['recurring_issue_family']}
-Repeat count	{autoops_result['repeat_count']}
-Recommended route	{autoops_result['recommended_route']}
-4. RCA Summary
+- Final decision: HOLD
+- Unsupported answer: True
+- Safe to ship: False
+- Reason: missing_retrieval_grounding
+
+## Unsupported Claims
+
+- database cluster was definitely overloaded
+- has now recovered
+
+## AutoOps Classification
+
+- Recurring issue family: missing_retrieval_grounding
+- Repeat count: {autoops_result['repeat_count']}
+- Recommended route: support_reviewer_queue
+
+## RCA Summary
 
 {rca['rca_summary']}
 
-Probable-Cause Hypothesis
-
-{rca['probable_cause_hypothesis']}
-
-Missing Diagnostics
-database health snapshot
-connection pool metrics
-matching DB saturation runbook
-trace-correlated deployment logs
-5. Product Feedback Summary
+## Product Feedback
 
 {rca['product_feedback_summary']}
 
-6. Support Response Draft
+## Outcome
 
-{rca['support_response_draft']}
+- Release safety outcome: blocked_from_shipping
+- Customer impact: Prevents unsupported root-cause explanations from reaching users.
 
-7. Outcome
-Outcome	Value
-Release safety outcome	{rca['release_safety_outcome']}
-Customer impact	{rca['customer_impact']}
-AutoOps recurring issue	{rca['autoops_recurring_issue']}
-Why This Matters
+## Why This Matters
 
-This demo connects AgentGrid and AutoOps into one operational loop:
+This demo connects:
+- unsupported-answer detection
+- eval-gate blocking
+- escalation workflows
+- recurring issue classification
+- RCA generation
+- product feedback generation
 
-unsafe AI answer detection
-eval-gate blocking
-support escalation
-recurring issue classification
-RCA generation
-product feedback generation
-
-This is the core FDE / TAM / AI-support workflow.
+into one operational GenAI support workflow.
 """
 
-Path("demo_outputs/end_to_end_ai_support_incident.md").write_text(md)
-return payload
+    Path("demo_outputs/end_to_end_ai_support_incident.md").write_text(md)
 
-if name == "main":
-print(json.dumps(build_report(), indent=2))
+    return payload
+
+
+if __name__ == "__main__":
+    print(json.dumps(build_report(), indent=2))

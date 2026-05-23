@@ -1,0 +1,75 @@
+{
+  "created_at": "2026-05-23T17:04:18.334817+00:00",
+  "bad_answer_event": {
+    "input": "Why did deployment fail?",
+    "bad_genai_answer": "The deployment failed because the database cluster was definitely overloaded and has now recovered.",
+    "available_context": [
+      "deployment logs mention DB timeout",
+      "retrieval did not return the DB saturation runbook",
+      "no database health snapshot was available"
+    ],
+    "detected_failures": [
+      "unsupported_root_cause_claim",
+      "missing_retrieval_grounding",
+      "insufficient_evidence"
+    ]
+  },
+  "agentgrid_detection": {
+    "trace_id": "trace_e2e_001",
+    "decision_id": "decision_e2e_001",
+    "final_decision": "hold",
+    "reason": "missing_retrieval_grounding",
+    "unsupported_answer": true,
+    "unsupported_claims": [
+      "database cluster was definitely overloaded",
+      "has now recovered"
+    ],
+    "eval_gate": {
+      "groundedness": "fail",
+      "unsupported_detail_risk": "high",
+      "missing_context": true,
+      "safe_to_ship": false
+    }
+  },
+  "escalation_artifact": {
+    "system": "jira_style_issue",
+    "issue_type": "GenAI Support Escalation",
+    "summary": "Unsupported GenAI deployment explanation blocked by AgentGrid eval gate",
+    "severity": "high",
+    "trace_id": "trace_e2e_001",
+    "decision_id": "decision_e2e_001",
+    "owner": "ai_support_engineering",
+    "support_action": "Request DB health snapshot and matching runbook evidence before answering.",
+    "engineering_escalation_summary": "AgentGrid detected unsupported root-cause claims and missing retrieval grounding in a deployment-support answer."
+  },
+  "autoops_classification": {
+    "incident_type": "genai_support_quality_issue",
+    "severity": "sev2",
+    "recurring_issue_family": "missing_retrieval_grounding",
+    "repeat_count": 3,
+    "is_recurring": true,
+    "recommended_route": "support_reviewer_queue",
+    "linked_trace_id": "trace_e2e_001"
+  },
+  "rca_and_product_feedback": {
+    "rca_summary": "The support answer was blocked because it asserted a definitive database-overload root cause without sufficient retrieved evidence.",
+    "probable_cause_hypothesis": "The likely workflow failure is missing retrieval grounding rather than a confirmed database outage.",
+    "missing_diagnostics": [
+      "database health snapshot",
+      "connection pool metrics",
+      "matching DB saturation runbook",
+      "trace-correlated deployment logs"
+    ],
+    "product_feedback_summary": "Improve retrieval coverage for deployment-failure runbooks and surface missing-evidence warnings earlier in the support flow.",
+    "support_response_draft": "I do not have enough evidence to confirm the deployment root cause yet. Please provide the DB health snapshot, connection pool metrics, and trace-correlated logs so we can safely continue.",
+    "customer_impact": "Prevents unsupported root-cause explanations from reaching users.",
+    "next_actions": [
+      "Hold answer until evidence is available",
+      "Route trace to support reviewer",
+      "Add missing runbook to retrieval corpus",
+      "Track recurrence under missing_retrieval_grounding"
+    ],
+    "release_safety_outcome": "blocked_from_shipping",
+    "autoops_recurring_issue": "missing_retrieval_grounding"
+  }
+}

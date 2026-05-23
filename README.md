@@ -399,3 +399,18 @@ See:
 
 - `ops_integrations/`
 - `customer_analytics/`
+
+
+## End-to-End AI Support Incident Demo
+
+AgentGrid + AutoOps includes one complete operational demo:
+
+bad GenAI support answer
+→ AgentGrid detects unsupported/missing context
+→ escalation artifact created
+→ AutoOps classifies recurring issue
+→ RCA + product feedback summary generated
+
+See:
+- demo_outputs/end_to_end_ai_support_incident.md
+- demo_outputs/end_to_end_ai_support_incident.json
