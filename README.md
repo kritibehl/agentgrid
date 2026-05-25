@@ -436,3 +436,18 @@ unsafe GenAI support answer
 
 See:
 - `demo_outputs/video_script/unsafe_answer_to_rca_walkthrough.md`
+
+
+## Google ADK / GEAR-Style Agent System Alignment
+
+![Google ADK / GEAR-Aligned Agent System](https://img.shields.io/badge/Google%20ADK%20%2F%20GEAR-Aligned%20Agent%20System-4285F4?style=for-the-badge)
+![MCP Style Tools](https://img.shields.io/badge/MCP--Style-Tool%20Server-34A853?style=for-the-badge)
+![Eval Gates](https://img.shields.io/badge/Eval%20Gates-Ship%20%2F%20Hold%20%2F%20Escalate-FBBC05?style=for-the-badge)
+
+
+AgentGrid is conceptually aligned with ADK/GEAR-style agent-system patterns: multi-agent orchestration, tool execution, evaluation gates, traceability, escalation routing, and deployment-oriented GenAI workflows.
+
+- [Google ADK / GEAR Comparison](comparisons/google_adk_gear_comparison.md)
+- [Unsafe Answer → RCA Walkthrough Script](demo_outputs/video_script/unsafe_answer_to_rca_walkthrough.md)
+- [Unsafe Answer → RCA Demo Video](demo_outputs/video/unsafe_answer_to_rca_demo.mp4)
+- [Real Trace Viewer Screenshot](screenshots/real_trace_viewer.png)
