@@ -451,3 +451,20 @@ AgentGrid is conceptually aligned with ADK/GEAR-style agent-system patterns: mul
 - [Unsafe Answer → RCA Walkthrough Script](demo_outputs/video_script/unsafe_answer_to_rca_walkthrough.md)
 - [Unsafe Answer → RCA Demo Video](demo_outputs/video/unsafe_answer_to_rca_demo.mp4)
 - [Real Trace Viewer Screenshot](screenshots/real_trace_viewer.png)
+
+
+## Walkthrough Demo Video
+
+A polished 2-minute walkthrough script is available here:
+
+- `demo_outputs/walkthrough/agentgrid_walkthrough_video_script.md`
+
+The walkthrough covers:
+
+- trace viewer
+- unsafe answer detection
+- HOLD decision
+- escalation
+- RCA generation
+- deployment/release state
+- human-review workflow
