@@ -1,3 +1,9 @@
+
+
+## Live Demo
+
+- https://agentgrid-seven.vercel.app
+
 # AgentGrid — Production-Style GenAI Forward Deployment System
 
 AgentGrid models how production GenAI systems retrieve evidence, orchestrate tools, evaluate outputs, route escalations, and convert unsupported AI behavior into operational decisions.
@@ -468,3 +474,25 @@ The walkthrough covers:
 - RCA generation
 - deployment/release state
 - human-review workflow
+
+
+## Frontend Architecture
+
+AgentGrid includes a React/TypeScript operational dashboard with:
+
+- reusable component system
+- typed API client
+- state-driven rendering
+- dark/light UI
+- loading and error states
+- retry request UI
+- responsive layouts
+- trace viewer
+- incident timeline
+- evaluation gate panel
+- deployment/release visualization
+- operational metrics charts
+
+See:
+- `docs/frontend/frontend_architecture.md`
+- `dashboard/src/`
