@@ -496,3 +496,24 @@ AgentGrid includes a React/TypeScript operational dashboard with:
 See:
 - `docs/frontend/frontend_architecture.md`
 - `dashboard/src/`
+
+
+## Frontend Visual Proof
+
+Live demo:
+
+- https://agentgrid-seven.vercel.app
+
+Recommended screenshot set:
+
+- `screenshots/frontend/dashboard_dark.png`
+- `screenshots/frontend/dashboard_light.png`
+- `screenshots/frontend/trace_viewer.png`
+- `screenshots/frontend/metrics_cards.png`
+- `screenshots/frontend/incident_timeline.png`
+- `screenshots/frontend/release_visualization.png`
+- `screenshots/frontend/mobile_responsive.png`
+
+Screenshot checklist:
+
+- `screenshots/frontend/screenshot_checklist.md`
