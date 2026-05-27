@@ -1,0 +1,5 @@
+{"event_id": "evt_577c75aa3ec2", "event_type": "user_query", "trace_id": "trace_stream_001", "timestamp_ms": 1779898738609, "payload": {"query": "Why did deployment fail?"}}
+{"event_id": "evt_d2390547c4ec", "event_type": "retrieval", "trace_id": "trace_stream_001", "timestamp_ms": 1779898738609, "payload": {"hit_count": 1, "retrieval_hit_rate": 0.32}}
+{"event_id": "evt_ae0fa2b16ac4", "event_type": "eval_gate", "trace_id": "trace_stream_001", "timestamp_ms": 1779898738609, "payload": {"decision": "hold", "reason": "missing_retrieval_grounding"}}
+{"event_id": "evt_36d184ce567b", "event_type": "escalation", "trace_id": "trace_stream_001", "timestamp_ms": 1779898738609, "payload": {"target": "support_reviewer_queue", "severity": "high"}}
+{"event_id": "evt_c48fbe6ffe62", "event_type": "latency_telemetry", "trace_id": "trace_stream_001", "timestamp_ms": 1779898738609, "payload": {"latency_ms": 258, "tokens_per_second": 950}}

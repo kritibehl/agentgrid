@@ -1,0 +1,38 @@
+{
+  "graph_id": "agentgrid_orchestration_graph_v1",
+  "nodes": [
+    {
+      "id": "planner_agent",
+      "role": "plans support workflow and required evidence"
+    },
+    {
+      "id": "retriever_agent",
+      "role": "retrieves docs, logs, and runbook chunks"
+    },
+    {
+      "id": "evaluator_agent",
+      "role": "checks grounding, unsupported details, and eval-gate decision"
+    },
+    {
+      "id": "escalation_agent",
+      "role": "routes hold/escalate decisions to reviewer or AutoOps"
+    },
+    {
+      "id": "response_synthesis_agent",
+      "role": "generates safe response or fallback explanation"
+    }
+  ],
+  "edges": [
+    ["planner_agent", "retriever_agent"],
+    ["retriever_agent", "evaluator_agent"],
+    ["evaluator_agent", "response_synthesis_agent"],
+    ["evaluator_agent", "escalation_agent"],
+    ["escalation_agent", "response_synthesis_agent"]
+  ],
+  "trace": {
+    "trace_id": "trace_graph_001",
+    "decision": "hold",
+    "reason": "missing_retrieval_grounding",
+    "human_review_required": true
+  }
+}

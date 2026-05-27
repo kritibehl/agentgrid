@@ -1,0 +1,15 @@
+{
+  "processed_event_count": 5,
+  "failed_event_count": 0,
+  "retry_count": 0,
+  "queue_lag_ms": 0,
+  "processing_latency_ms": 0.08,
+  "event_type_counts": {
+    "user_query": 1,
+    "retrieval": 1,
+    "eval_gate": 1,
+    "escalation": 1,
+    "latency_telemetry": 1
+  },
+  "status": "processed"
+}

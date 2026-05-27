@@ -1,0 +1,74 @@
+[
+  {
+    "chunk_id": "runbook_db_timeout_chunk_0",
+    "doc_id": "runbook_db_timeout",
+    "embedding": [
+      0.5554,
+      0.5213,
+      0.994,
+      0.3468,
+      0.6961,
+      0.3752
+    ],
+    "embedding_version": "fake_hash_embedding_v1",
+    "stale": false
+  },
+  {
+    "chunk_id": "runbook_db_timeout_chunk_1",
+    "doc_id": "runbook_db_timeout",
+    "embedding": [
+      0.7106,
+      0.0,
+      0.3488,
+      0.2628,
+      0.4147,
+      0.2285
+    ],
+    "embedding_version": "fake_hash_embedding_v1",
+    "stale": false
+  },
+  {
+    "chunk_id": "runbook_retrieval_grounding_chunk_0",
+    "doc_id": "runbook_retrieval_grounding",
+    "embedding": [
+      0.6883,
+      0.1409,
+      0.3729,
+      0.9613,
+      0.5364,
+      0.0143
+    ],
+    "embedding_version": "fake_hash_embedding_v1",
+    "stale": false,
+    "refreshed_at_ms": 1779898738610
+  },
+  {
+    "chunk_id": "runbook_retrieval_grounding_chunk_1",
+    "doc_id": "runbook_retrieval_grounding",
+    "embedding": [
+      0.9441,
+      0.325,
+      0.7254,
+      0.326,
+      0.3781,
+      0.0265
+    ],
+    "embedding_version": "fake_hash_embedding_v1",
+    "stale": false,
+    "refreshed_at_ms": 1779898738610
+  },
+  {
+    "chunk_id": "runbook_eval_gate_chunk_0",
+    "doc_id": "runbook_eval_gate",
+    "embedding": [
+      0.529,
+      0.6993,
+      0.925,
+      0.6515,
+      0.8117,
+      0.7952
+    ],
+    "embedding_version": "fake_hash_embedding_v1",
+    "stale": false
+  }
+]

@@ -517,3 +517,18 @@ Recommended screenshot set:
 Screenshot checklist:
 
 - `screenshots/frontend/screenshot_checklist.md`
+
+
+## AI Platform Infrastructure Proof
+
+AgentGrid includes infrastructure-style workflows for Nokia-aligned AI platform roles:
+
+- Kafka-style event ingestion for user query, retrieval, eval-gate, escalation, and latency telemetry events
+- async agent-event processing with queue lag, retry count, failed event count, and processing latency metrics
+- vector-index lifecycle workflows covering document chunking, embedding generation, stale-index refresh, and retrieval benchmarking
+- graph-based multi-agent orchestration with planner, retriever, evaluator, escalation, and response-synthesis agents
+
+See:
+- `streaming/`
+- `vector_indexing/`
+- `orchestration_graph/`

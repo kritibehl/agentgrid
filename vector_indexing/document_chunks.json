@@ -1,0 +1,32 @@
+[
+  {
+    "chunk_id": "runbook_db_timeout_chunk_0",
+    "doc_id": "runbook_db_timeout",
+    "text": "DB timeout runbook. Check database health, connection pool saturation, retry fanout, and",
+    "version": "v1"
+  },
+  {
+    "chunk_id": "runbook_db_timeout_chunk_1",
+    "doc_id": "runbook_db_timeout",
+    "text": "p95 latency.",
+    "version": "v1"
+  },
+  {
+    "chunk_id": "runbook_retrieval_grounding_chunk_0",
+    "doc_id": "runbook_retrieval_grounding",
+    "text": "Missing retrieval grounding should hold the answer and route to a support",
+    "version": "v1"
+  },
+  {
+    "chunk_id": "runbook_retrieval_grounding_chunk_1",
+    "doc_id": "runbook_retrieval_grounding",
+    "text": "reviewer.",
+    "version": "v1"
+  },
+  {
+    "chunk_id": "runbook_eval_gate_chunk_0",
+    "doc_id": "runbook_eval_gate",
+    "text": "Eval gates block unsupported answers, unsafe root-cause claims, and missing evidence.",
+    "version": "v1"
+  }
+]

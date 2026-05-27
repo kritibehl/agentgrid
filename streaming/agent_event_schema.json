@@ -1,0 +1,23 @@
+{
+  "schema": "agent_event_v1",
+  "required_fields": [
+    "event_id",
+    "event_type",
+    "trace_id",
+    "timestamp_ms",
+    "payload"
+  ],
+  "event_types": [
+    "user_query",
+    "retrieval",
+    "eval_gate",
+    "escalation",
+    "latency_telemetry"
+  ],
+  "metrics": [
+    "queue_lag_ms",
+    "processing_latency_ms",
+    "failed_event_count",
+    "retry_count"
+  ]
+}
