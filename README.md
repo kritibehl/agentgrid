@@ -550,3 +550,17 @@ See:
 - `customer_solution_demo/`
 - `frontend_quality/`
 - `ai_productivity/`
+
+
+## Streaming Runtime Proof
+
+AgentGrid includes streaming-runtime artifacts for AI platform/customer-solution roles:
+
+- event stream topology
+- consumer-lag report
+- dead-letter queue design
+- stream replay workflow
+- window processor with retry, failure, lag, and backpressure telemetry
+
+See:
+- `streaming_runtime/`

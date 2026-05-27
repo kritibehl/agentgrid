@@ -1,0 +1,26 @@
+{
+  "window_event_count": 6,
+  "event_type_counts": {
+    "user_query": 1,
+    "retrieval": 2,
+    "eval_gate": 1,
+    "escalation": 1,
+    "latency_telemetry": 1
+  },
+  "consumer_lag": 3,
+  "avg_processing_latency_ms": 140.5,
+  "failed_event_count": 1,
+  "retry_count": 1,
+  "backpressure_risk": true,
+  "dead_letter_candidates": [
+    {
+      "event_id": "evt_006",
+      "type": "retrieval",
+      "latency_ms": 310,
+      "status": "failed",
+      "partition": 0,
+      "offset": 15
+    }
+  ],
+  "replay_from_offset": 15
+}
