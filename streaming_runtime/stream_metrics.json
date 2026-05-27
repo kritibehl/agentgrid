@@ -1,0 +1,12 @@
+{
+  "stream": "agentgrid_runtime_stream",
+  "processed_event_count": 0,
+  "failed_event_count": 0,
+  "retry_count": 0,
+  "dlq_depth": 0,
+  "consumer_lag": 0,
+  "processing_latency_ms": 0.0,
+  "backpressure_risk": false,
+  "processed_event_types": [],
+  "dlq_events": []
+}

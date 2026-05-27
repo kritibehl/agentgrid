@@ -1,0 +1,35 @@
+{
+  "replayed_event_count": 2,
+  "remaining_dlq_depth": 0,
+  "second_pass_processed": 0,
+  "second_pass_failed": 0,
+  "status": "replayed",
+  "replayed_events": [
+    {
+      "event_id": "1779904910576-4",
+      "event_type": "retrieval",
+      "trace_id": "trace_stream_runtime_001",
+      "payload": {
+        "reason": "stale_embedding",
+        "replayed_from_dlq": true
+      },
+      "offset": 5,
+      "attempts": 0,
+      "status": "pending",
+      "error": null
+    },
+    {
+      "event_id": "1779904910576-4",
+      "event_type": "retrieval",
+      "trace_id": "trace_stream_runtime_001",
+      "payload": {
+        "reason": "stale_embedding",
+        "replayed_from_dlq": true
+      },
+      "offset": 5,
+      "attempts": 0,
+      "status": "pending",
+      "error": null
+    }
+  ]
+}
