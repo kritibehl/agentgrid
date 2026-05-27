@@ -1,0 +1,26 @@
+[
+  {
+    "customer_issue": "AI support answer gave a confident deployment root cause without enough logs.",
+    "technical_requirement": "Block unsupported answers and require retrieval-grounded evidence.",
+    "ai_workflow_design": "Retrieve logs/runbooks, run eval gate, route HOLD decision to reviewer.",
+    "implementation_decision": "Use eval-gate checks for missing retrieval grounding and unsupported details.",
+    "operational_metric": "unsupported_answer_blocked=true",
+    "escalation_feedback_loop": "Send trace_id and missing evidence list to support reviewer."
+  },
+  {
+    "customer_issue": "Support team repeatedly asks why retrieval missed deployment runbooks.",
+    "technical_requirement": "Detect recurring missing-runbook issue family.",
+    "ai_workflow_design": "Cluster feedback into issue taxonomy and classify repeat issue patterns.",
+    "implementation_decision": "Use AutoOps-style customer analytics and repeat issue flags.",
+    "operational_metric": "repeat_count=3",
+    "escalation_feedback_loop": "Create product feedback to improve retrieval coverage."
+  },
+  {
+    "customer_issue": "Dashboard users need to see whether an answer was held, shipped, or escalated.",
+    "technical_requirement": "Expose traceable decisions in frontend dashboard.",
+    "ai_workflow_design": "Show eval-gate result, trace viewer, incident timeline, and release state.",
+    "implementation_decision": "Use React/TypeScript components with typed API integration.",
+    "operational_metric": "human_review_required=true",
+    "escalation_feedback_loop": "Route HOLD/ESCALATE states into human-review queue."
+  }
+]
