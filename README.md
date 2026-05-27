@@ -564,3 +564,21 @@ AgentGrid includes streaming-runtime artifacts for AI platform/customer-solution
 
 See:
 - `streaming_runtime/`
+
+
+## Vector Retrieval Lifecycle and Multi-Agent Runtime
+
+AgentGrid includes infrastructure-style retrieval and orchestration workflows covering:
+
+- embedding refresh strategies
+- stale embedding recovery
+- hybrid lexical-semantic retrieval
+- retrieval cache behavior
+- retrieval-quality benchmarking
+- graph-based multi-agent execution
+- evaluation checkpoints
+- escalation routing
+
+See:
+- `vector_retrieval_lifecycle/`
+- `multi_agent_runtime/`

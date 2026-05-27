@@ -1,0 +1,52 @@
+{
+  "runtime_graph_id": "agentgrid_runtime_graph_v2",
+  "agents": [
+    {
+      "name": "planner_agent",
+      "responsibilities": [
+        "issue classification",
+        "workflow planning"
+      ]
+    },
+    {
+      "name": "retriever_agent",
+      "responsibilities": [
+        "hybrid retrieval",
+        "retrieval ranking",
+        "grounding evidence"
+      ]
+    },
+    {
+      "name": "evaluator_agent",
+      "responsibilities": [
+        "unsupported-detail detection",
+        "eval-gate decisions",
+        "human-review checks"
+      ]
+    },
+    {
+      "name": "escalation_agent",
+      "responsibilities": [
+        "review routing",
+        "RCA generation",
+        "support escalation"
+      ]
+    }
+  ],
+  "execution_flow": [
+    "planner_agent",
+    "retriever_agent",
+    "evaluator_agent",
+    "escalation_agent"
+  ],
+  "evaluation_checkpoints": [
+    "retrieval_grounding",
+    "unsupported_output",
+    "human_review_required"
+  ],
+  "routing": {
+    "ship": "release_dashboard",
+    "hold": "review_queue",
+    "escalate": "autoops_rca"
+  }
+}
