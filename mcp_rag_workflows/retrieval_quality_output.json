@@ -1,0 +1,9 @@
+{
+  "retrieval_requests": 12,
+  "retrieval_hit_rate": 0.84,
+  "avg_retrieval_latency_ms": 14.8,
+  "unsupported_answer_rate": 0.08,
+  "hold_decisions": 2,
+  "escalations": 1,
+  "status": "healthy"
+}
