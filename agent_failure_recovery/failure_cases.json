@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "tool_timeout",
+    "failure": "MCP tool call timed out",
+    "expected_recovery": "retry once, preserve trace_id, route to escalation if timeout persists",
+    "final_state": "escalate"
+  },
+  {
+    "case_id": "retrieval_miss",
+    "failure": "retrieval returned no grounding evidence",
+    "expected_recovery": "hold response, request missing evidence, send to human review",
+    "final_state": "human_review"
+  },
+  {
+    "case_id": "agent_crash",
+    "failure": "agent crashed during response synthesis",
+    "expected_recovery": "record partial trace, emit fallback response, create recovery event",
+    "final_state": "fallback"
+  },
+  {
+    "case_id": "escalation_required",
+    "failure": "eval gate detected unsupported operational claim",
+    "expected_recovery": "block answer, create escalation artifact, route to reviewer queue",
+    "final_state": "escalate"
+  }
+]

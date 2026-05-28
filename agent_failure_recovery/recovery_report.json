@@ -1,0 +1,40 @@
+{
+  "cases_evaluated": 4,
+  "trace_preservation_rate": 1.0,
+  "unsafe_outputs_blocked": 3,
+  "fallback_paths_verified": 1,
+  "results": [
+    {
+      "case_id": "tool_timeout",
+      "failure": "MCP tool call timed out",
+      "trace_preserved": true,
+      "recovery_action": "retry once, preserve trace_id, route to escalation if timeout persists",
+      "final_state": "escalate",
+      "safe_to_ship": false
+    },
+    {
+      "case_id": "retrieval_miss",
+      "failure": "retrieval returned no grounding evidence",
+      "trace_preserved": true,
+      "recovery_action": "hold response, request missing evidence, send to human review",
+      "final_state": "human_review",
+      "safe_to_ship": false
+    },
+    {
+      "case_id": "agent_crash",
+      "failure": "agent crashed during response synthesis",
+      "trace_preserved": true,
+      "recovery_action": "record partial trace, emit fallback response, create recovery event",
+      "final_state": "fallback",
+      "safe_to_ship": true
+    },
+    {
+      "case_id": "escalation_required",
+      "failure": "eval gate detected unsupported operational claim",
+      "trace_preserved": true,
+      "recovery_action": "block answer, create escalation artifact, route to reviewer queue",
+      "final_state": "escalate",
+      "safe_to_ship": false
+    }
+  ]
+}

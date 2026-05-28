@@ -582,3 +582,19 @@ AgentGrid includes infrastructure-style retrieval and orchestration workflows co
 See:
 - `vector_retrieval_lifecycle/`
 - `multi_agent_runtime/`
+
+
+## Agent Failure Recovery
+
+AgentGrid includes robustness workflows for:
+
+- tool timeout
+- retrieval miss
+- agent crash
+- escalation routing
+- human review
+- fallback responses
+- trace preservation
+
+See:
+- `agent_failure_recovery/`
