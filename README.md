@@ -598,3 +598,18 @@ AgentGrid includes robustness workflows for:
 
 See:
 - `agent_failure_recovery/`
+
+
+## Human Review Lifecycle
+
+AgentGrid includes a review queue workflow showing:
+
+- agent output
+- eval-gate block
+- human review
+- approval / rejection
+- release state
+- governance history
+
+See:
+- `review_queue/`

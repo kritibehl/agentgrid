@@ -1,0 +1,38 @@
+{
+  "workflow": "human_review_lifecycle",
+  "final_status": "released",
+  "review_id": "review_78cd2ec1f0",
+  "history_count": 3,
+  "governance_path": [
+    "blocked",
+    "reviewed",
+    "approved",
+    "released"
+  ],
+  "item": {
+    "review_id": "review_78cd2ec1f0",
+    "agent_output": "The database was definitely overloaded and recovered.",
+    "reason": "unsupported_root_cause_claim",
+    "status": "released",
+    "history": [
+      {
+        "status": "blocked",
+        "actor": "eval_gate",
+        "timestamp": "2026-05-28T20:47:44.408704+00:00",
+        "note": "unsupported_root_cause_claim"
+      },
+      {
+        "status": "approved",
+        "actor": "human_reviewer",
+        "timestamp": "2026-05-28T20:47:44.408713+00:00",
+        "note": "Edited response to remove unsupported certainty and request DB health evidence."
+      },
+      {
+        "status": "released",
+        "actor": "release_manager",
+        "timestamp": "2026-05-28T20:47:44.408716+00:00",
+        "note": "Reviewed output released."
+      }
+    ]
+  }
+}
