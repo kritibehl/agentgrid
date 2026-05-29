@@ -613,3 +613,20 @@ AgentGrid includes a review queue workflow showing:
 
 See:
 - `review_queue/`
+
+
+## Applied RAG / MCP / Agentic Workflows
+
+AgentGrid includes applied GenAI workflows for:
+
+- MCP-style RAG analytics
+- retrieval-quality monitoring
+- multi-agent analytics pipelines
+- product-search analysis
+- recommendation review
+- RAG-based answer generation
+- eval-gated release decisions
+
+See:
+- `mcp_rag_analytics/`
+- `agentic_retail_workflows/`

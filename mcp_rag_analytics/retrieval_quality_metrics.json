@@ -1,0 +1,6 @@
+{
+  "retrieval_hit_rate": 0.84,
+  "retrieval_latency_ms": 14.8,
+  "stale_embedding_detected": true,
+  "cache_refresh_required": true
+}

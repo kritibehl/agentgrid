@@ -1,0 +1,5 @@
+{
+  "decision": "hold",
+  "reason": "stale_embedding_detected",
+  "human_review_required": true
+}
