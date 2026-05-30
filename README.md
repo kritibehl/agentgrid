@@ -644,3 +644,21 @@ AgentGrid includes Apple Store Online-aligned personalization workflows showing:
 
 See:
 - `retail_personalization/`
+
+
+## Apple Store Online Product Discovery Demo
+
+AgentGrid includes a visual product-discovery demo for Apple Store Online-style personalization workflows:
+
+customer segment
+→ product search
+→ recommendation review
+→ RAG answer
+→ eval gate
+→ release decision
+
+See:
+
+- `docs/apple_store_online_demo.md`
+- `docs/images/product_discovery_flow.png`
+- `docs/images/personalization_eval_report.png`
