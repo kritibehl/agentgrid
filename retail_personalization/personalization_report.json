@@ -1,0 +1,64 @@
+{
+  "workflow": "retail_personalization",
+  "segments_evaluated": 3,
+  "recommendations_evaluated": 3,
+  "ship_decisions": 3,
+  "hold_decisions": 0,
+  "avg_message_relevance": 0.91,
+  "outputs": [
+    {
+      "segment_id": "student_creator",
+      "signals": [
+        "student",
+        "content creation",
+        "budget sensitive"
+      ],
+      "recommendation": "MacBook Air",
+      "evidence": [
+        "budget sensitive",
+        "content creation",
+        "portable workflow"
+      ],
+      "personalized_message": "A lightweight MacBook Air can support classwork, creative projects, and everyday productivity.",
+      "message_relevance": 0.91,
+      "eval_gate_decision": "ship",
+      "reason": "segment_aligned_personalization"
+    },
+    {
+      "segment_id": "fitness_wellness",
+      "signals": [
+        "fitness",
+        "health tracking",
+        "iPhone user"
+      ],
+      "recommendation": "Apple Watch",
+      "evidence": [
+        "fitness",
+        "health tracking",
+        "daily activity"
+      ],
+      "personalized_message": "Apple Watch can help track activity, workouts, and wellness routines throughout the day.",
+      "message_relevance": 0.89,
+      "eval_gate_decision": "ship",
+      "reason": "segment_aligned_personalization"
+    },
+    {
+      "segment_id": "pro_workflow",
+      "signals": [
+        "developer",
+        "video editing",
+        "performance focused"
+      ],
+      "recommendation": "MacBook Pro",
+      "evidence": [
+        "developer",
+        "video editing",
+        "performance focused"
+      ],
+      "personalized_message": "MacBook Pro is aligned with demanding development and creative workflows.",
+      "message_relevance": 0.93,
+      "eval_gate_decision": "ship",
+      "reason": "segment_aligned_personalization"
+    }
+  ]
+}

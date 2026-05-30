@@ -1,0 +1,20 @@
+[
+  {
+    "segment_id": "student_creator",
+    "signals": ["student", "content creation", "budget sensitive"],
+    "preferred_categories": ["MacBook Air", "iPad", "AirPods"],
+    "messaging_goal": "affordable creative workflow"
+  },
+  {
+    "segment_id": "fitness_wellness",
+    "signals": ["fitness", "health tracking", "iPhone user"],
+    "preferred_categories": ["Apple Watch", "AirPods", "iPhone accessories"],
+    "messaging_goal": "health and daily activity support"
+  },
+  {
+    "segment_id": "pro_workflow",
+    "signals": ["developer", "video editing", "performance focused"],
+    "preferred_categories": ["MacBook Pro", "Studio Display", "iCloud"],
+    "messaging_goal": "high-performance productivity"
+  }
+]

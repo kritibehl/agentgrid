@@ -630,3 +630,17 @@ AgentGrid includes applied GenAI workflows for:
 See:
 - `mcp_rag_analytics/`
 - `agentic_retail_workflows/`
+
+
+## Retail Personalization Workflows
+
+AgentGrid includes Apple Store Online-aligned personalization workflows showing:
+
+- user segmentation
+- recommendation experiments
+- evidence-based personalized messaging
+- eval-gated personalization decisions
+- message relevance scoring
+
+See:
+- `retail_personalization/`
