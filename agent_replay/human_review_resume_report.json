@@ -1,0 +1,14 @@
+{
+  "run_id": "run-1023",
+  "trace_id": "ag-1023",
+  "resumed_from_checkpoint": true,
+  "before_eval": {
+    "decision": "hold",
+    "reason": "tool_timeout"
+  },
+  "after_eval": {
+    "decision": "ship",
+    "reason": "reviewer_approved_fallback"
+  },
+  "final_status": "released"
+}

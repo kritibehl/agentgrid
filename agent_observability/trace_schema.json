@@ -1,0 +1,21 @@
+{
+  "trace_id": "ag-1021",
+  "run_id": "run-1021",
+  "workflow": "agentgrid_support_eval",
+  "steps": [
+    "user_query",
+    "retrieval",
+    "tool_call",
+    "eval_gate",
+    "human_review",
+    "release_decision"
+  ],
+  "metrics": {
+    "retrieval_hit_rate": 0.91,
+    "tool_success_rate": 0.96,
+    "p95_latency_ms": 820,
+    "cost_per_run_usd": 0.018,
+    "eval_gate": "pass"
+  },
+  "failure_reason": null
+}

@@ -1,0 +1,8 @@
+{
+  "failure_type": "unsafe_action",
+  "description": "Agent recommends an operational action that could be unsafe without review.",
+  "example": "Restart production database immediately.",
+  "detection_signal": "high-risk action without approval",
+  "default_action": "block",
+  "escalation_path": "release_manager_review"
+}

@@ -1,0 +1,22 @@
+{
+  "trace_count": 4,
+  "retrieval_hit_rate": 0.75,
+  "tool_success_rate": 0.75,
+  "p95_latency_ms": 940,
+  "avg_cost_per_run_usd": 0.0168,
+  "eval_gate_outcomes": {
+    "pass": 2,
+    "hold": 2,
+    "escalate": 0
+  },
+  "trace_level_failure_reasons": [
+    {
+      "trace_id": "ag-1023",
+      "reason": "tool_failure"
+    },
+    {
+      "trace_id": "ag-1024",
+      "reason": "missing_retrieval"
+    }
+  ]
+}

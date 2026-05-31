@@ -662,3 +662,24 @@ See:
 - `docs/apple_store_online_demo.md`
 - `docs/images/product_discovery_flow.png`
 - `docs/images/personalization_eval_report.png`
+
+
+## Agent Observability, Replay, and Guardrails
+
+AgentGrid includes production-style agent infrastructure proof covering:
+
+- trace schema
+- retrieval hit rate
+- tool success rate
+- p95 latency
+- cost per run
+- eval-gate outcomes
+- trace-level failure reasons
+- replayable saved agent runs
+- human-review resume checkpoints
+- guardrail failure taxonomy
+
+See:
+- `agent_observability/`
+- `agent_replay/`
+- `guardrail_taxonomy/`

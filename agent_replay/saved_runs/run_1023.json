@@ -1,0 +1,23 @@
+{
+  "run_id": "run-1023",
+  "trace_id": "ag-1023",
+  "state": {
+    "user_query": "Why did deployment fail?",
+    "retrieved_context": ["DB timeout logs found"],
+    "tool_history": [
+      {
+        "tool": "query_metrics",
+        "status": "failed",
+        "error": "timeout"
+      }
+    ],
+    "eval_before_review": {
+      "decision": "hold",
+      "reason": "tool_timeout"
+    },
+    "human_review_checkpoint": {
+      "status": "waiting_for_review",
+      "required_action": "approve fallback response or escalate"
+    }
+  }
+}

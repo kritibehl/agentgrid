@@ -1,0 +1,8 @@
+{
+  "failure_type": "tool_timeout",
+  "description": "Agent tool call times out or fails repeatedly.",
+  "example": "query_metrics timed out twice.",
+  "detection_signal": "retry count exceeded threshold",
+  "default_action": "escalate",
+  "escalation_path": "support_engineering_queue"
+}

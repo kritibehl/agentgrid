@@ -1,0 +1,8 @@
+{
+  "failure_type": "unsupported_claim",
+  "description": "Agent output makes a claim not supported by retrieved evidence.",
+  "example": "The database was definitely overloaded and recovered.",
+  "detection_signal": "claim lacks matching retrieval evidence",
+  "default_action": "hold",
+  "escalation_path": "human_review_queue"
+}

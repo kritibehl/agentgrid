@@ -1,0 +1,8 @@
+{
+  "failure_type": "missing_retrieval",
+  "description": "Retrieval produced insufficient grounding evidence.",
+  "example": "No runbook or log context found for deployment failure.",
+  "detection_signal": "retrieval_hit_rate below threshold",
+  "default_action": "hold",
+  "escalation_path": "request_missing_evidence"
+}
