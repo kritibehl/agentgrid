@@ -1,0 +1,44 @@
+{
+  "baseline_period": "last_month",
+  "current_period": "this_month",
+  "metrics": {
+    "retrieval_hit_rate": {
+      "baseline": 0.91,
+      "current": 0.76,
+      "drift": -0.15,
+      "status": "regression"
+    },
+    "tool_success_rate": {
+      "baseline": 0.97,
+      "current": 0.94,
+      "drift": -0.03,
+      "status": "stable"
+    },
+    "eval_gate_pass_rate": {
+      "baseline": 0.88,
+      "current": 0.71,
+      "drift": -0.17,
+      "status": "regression"
+    },
+    "p95_latency_ms": {
+      "baseline": 820,
+      "current": 960,
+      "drift": 140,
+      "status": "regression"
+    },
+    "unsupported_answer_rate": {
+      "baseline": 0.04,
+      "current": 0.09,
+      "drift": 0.05,
+      "status": "regression"
+    }
+  },
+  "regressions": [
+    "retrieval_hit_rate",
+    "eval_gate_pass_rate",
+    "p95_latency_ms",
+    "unsupported_answer_rate"
+  ],
+  "decision": "hold",
+  "reason": "quality_regression_detected"
+}

@@ -683,3 +683,20 @@ See:
 - `agent_observability/`
 - `agent_replay/`
 - `guardrail_taxonomy/`
+
+
+## Cost Governance and Evaluation Drift
+
+AgentGrid includes AI operations governance workflows for:
+
+- cost per run
+- projected monthly spend
+- budget risk detection
+- release budget gates
+- baseline vs current evaluation drift
+- retrieval quality regression detection
+- latency and unsupported-answer drift tracking
+
+See:
+- `cost_governance/`
+- `evaluation_drift/`

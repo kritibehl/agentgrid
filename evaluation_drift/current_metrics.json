@@ -1,0 +1,8 @@
+{
+  "period": "this_month",
+  "retrieval_hit_rate": 0.76,
+  "tool_success_rate": 0.94,
+  "eval_gate_pass_rate": 0.71,
+  "p95_latency_ms": 960,
+  "unsupported_answer_rate": 0.09
+}

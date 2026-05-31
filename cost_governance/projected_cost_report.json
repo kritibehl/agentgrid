@@ -1,0 +1,21 @@
+{
+  "monthly_budget": 500,
+  "projected_spend": 700.0,
+  "budget_consumed_pct": 140.0,
+  "status": "budget_risk",
+  "recommended_action": "hold_noncritical_experiments",
+  "provider_spend": [
+    {
+      "provider": "gpt-4o-mini",
+      "cost_per_run_usd": 0.018,
+      "monthly_runs": 34000,
+      "projected_monthly_cost": 612.0
+    },
+    {
+      "provider": "gemini-flash",
+      "cost_per_run_usd": 0.011,
+      "monthly_runs": 8000,
+      "projected_monthly_cost": 88.0
+    }
+  ]
+}

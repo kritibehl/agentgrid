@@ -1,0 +1,20 @@
+{
+  "monthly_budget_usd": 500,
+  "providers": [
+    {
+      "provider": "gpt-4o-mini",
+      "cost_per_run_usd": 0.018,
+      "monthly_runs": 34000
+    },
+    {
+      "provider": "gemini-flash",
+      "cost_per_run_usd": 0.011,
+      "monthly_runs": 8000
+    }
+  ],
+  "actions": {
+    "safe": "continue",
+    "budget_risk": "hold_noncritical_experiments",
+    "over_budget": "block_new_experiments"
+  }
+}

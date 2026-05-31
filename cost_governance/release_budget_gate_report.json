@@ -1,0 +1,8 @@
+{
+  "gate": "ai_cost_governance",
+  "decision": "hold",
+  "monthly_budget": 500,
+  "projected_spend": 700.0,
+  "status": "budget_risk",
+  "recommended_action": "hold_noncritical_experiments"
+}
