@@ -1,0 +1,5 @@
+{"event_id":"e1","model_version":"gpt4o-mini-v2","retrieval_hit":true,"tool_success":true,"decision":"ship","latency_ms":410,"eval_score":0.91}
+{"event_id":"e2","model_version":"gpt4o-mini-v2","retrieval_hit":false,"tool_success":true,"decision":"hold","latency_ms":530,"eval_score":0.62}
+{"event_id":"e3","model_version":"gemini-flash-v1","retrieval_hit":true,"tool_success":false,"decision":"escalate","latency_ms":880,"eval_score":0.58}
+{"event_id":"e4","model_version":"claude-haiku-v1","retrieval_hit":true,"tool_success":true,"decision":"ship","latency_ms":390,"eval_score":0.88}
+{"event_id":"e5","model_version":"gpt4o-mini-v2","retrieval_hit":true,"tool_success":true,"decision":"ship","latency_ms":470,"eval_score":0.84}

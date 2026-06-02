@@ -1,0 +1,26 @@
+{
+  "gpt4o-mini-v2": {
+    "request_count": 3,
+    "retrieval_hit_rate": 0.67,
+    "tool_success_rate": 1.0,
+    "avg_eval_score": 0.79,
+    "avg_latency_ms": 470.0,
+    "avg_cost_usd": 0.013
+  },
+  "gemini-flash-v1": {
+    "request_count": 1,
+    "retrieval_hit_rate": 1.0,
+    "tool_success_rate": 0.0,
+    "avg_eval_score": 0.58,
+    "avg_latency_ms": 880.0,
+    "avg_cost_usd": 0.011
+  },
+  "claude-haiku-v1": {
+    "request_count": 1,
+    "retrieval_hit_rate": 1.0,
+    "tool_success_rate": 1.0,
+    "avg_eval_score": 0.88,
+    "avg_latency_ms": 390.0,
+    "avg_cost_usd": 0.016
+  }
+}

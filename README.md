@@ -1,237 +1,720 @@
-# AgentGrid
 
-> A production-style GenAI operations platform that orchestrates AI support workflows with retrieval, MCP-style tool use, eval gates, cost governance, and structured escalation.
 
-`Python` · `LangGraph` · `FastAPI` · `Prometheus` · `Redis` · `Docker`
+## Live Demo
 
-🔗 **[Live Demo](https://agentgrid-seven.vercel.app/)**
+- https://agentgrid-seven.vercel.app
 
----
+# AgentGrid — Production-Style GenAI Forward Deployment System
 
-## Why This Project Matters
+AgentGrid models how production GenAI systems retrieve evidence, orchestrate tools, evaluate outputs, route escalations, and convert unsupported AI behavior into operational decisions.
 
-- GenAI support systems fail silently: answers ship without retrieval context, with unsupported claims, or after tool failures — no gate stops them
-- AgentGrid puts a 5-signal eval gate between generation and the user: every answer must pass correctness, citation coverage, hallucination risk, safety, and latency checks before it ships
-- Unsafe or low-confidence answers escalate to human review with full AutoOps context attached — they don't ship with a disclaimer
-- This proves: agentic workflow design, eval gate engineering, retrieval system discipline, and operational AI tooling judgment
+## Core Features
 
----
+- Multi-agent orchestration workflows
+- MCP-style tool server
+- RAG over docs/logs/runbooks
+- Evaluation gates (ship / hold / escalate)
+- Escalation routing and reviewer workflows
+- LLM-native observability
+- Cloud deployment workflows
+- Customer deployment scenarios
+- Trace exports and audit flows
+- Support-decision analytics
 
-## 30-Second Proof
+## System Flow
 
-| Signal | Verified output |
-|---|---|
-| Unsafe outputs shipped | **0** across 25 validation runs |
-| Retrieval hit rate drift detected | 0.91 → 0.76 → **HOLD** |
-| Projected spend vs budget | $700 vs $500 → **HOLD** |
-| Gate decisions | 9 ship · 10 hold · 6 escalate |
-| p95 latency | 258ms |
-| Tool-call success rate | 0.88 |
-| Tests | 54 passing |
+User query
+→ triage agent
+→ retrieval agent
+→ MCP tool execution
+→ answer generation
+→ evaluation gate
+→ ship / hold / escalate
+→ AutoOps incident analytics
 
----
+## Production Signals
 
-## Screenshots
+- Cloud Run-style deployment proof
+- Redis-backed async validation workflows
+- JWT/RBAC reviewer roles
+- Prometheus-style metrics
+- Trace IDs and audit logs
+- Customer deployment case studies
+- Multi-agent orchestration
+- Operational evaluation gates
 
-> Add these to `docs/screenshots/` — they are the highest ROI improvement remaining.
 
-| Trace View | Eval Gate Decision |
-|---|---|
-| ![Trace View](screenshots/workflow_trace.png) | ![Eval Gate](screenshots/eval_gate.png) |
 
-| Cost Governance | Operational Dashboard |
-|---|---|
-| ![Cost Governance](screenshots/latency_cost_report.png) | ![Dashboard](screenshots/dashboard.png) |
+```text
+Query → RAG → LangGraph → MCP tools → Eval gate → ship/hold/escalate → AutoOps event
 
-**Request lifecycle — what the trace view shows:**
+AgentGrid is a production-style GenAI support system that uses a LangGraph workflow, retrieval over operational documents/logs/runbooks, MCP-style tools, LLM-native metrics, and an evaluation gate to classify incidents, retrieve evidence, generate action plans, and decide whether to ship, hold, or escalate.
 
-```
-User query: "Deployment failed — DB timeout causing retry storm"
-      │
-      ▼  [retrieve_context]  hit_rate=0.88  citations=3
-      │
-      ▼  [analyze_logs]      tool_status=success  pattern=retry_storm
-      │
-      ▼  [create_action_plan] recommended_action="reduce connection pool size"
-      │
-      ▼  [generate_answer]   tokens=312  cost=$0.0004
-      │
-      ▼  [eval_gate]
-            correctness:        PASS
-            citation_coverage:  FAIL  ← 0% on one claim
-            hallucination_risk: PASS
-            safety:             PASS
-            latency:            PASS
-      │
-      ▼  decision: HOLD  →  queued for human review
-         autoops_event: { incident_type: "low_citation_coverage" }
-```
+## Why this project exists
 
----
-
-## Demo
-
-```bash
-git clone https://github.com/kritibehl/agentgrid-demo
-cd agentgrid-demo
-make demo
-```
-
-Expected output:
-```json
-{
-  "eval_gate": {
-    "correctness": true,
-    "citation_coverage": false,
-    "final_decision": "hold"
-  },
-  "metrics": {
-    "latency_seconds": 0.0028,
-    "tool_call_success_rate": 1.0,
-    "tokens_used": 312,
-    "estimated_cost_usd": 0.0004
-  },
-  "autoops_event": {
-    "incident_type": "low_citation_coverage",
-    "escalated": false,
-    "hold_reason": "citation_coverage"
-  }
-}
-```
-
-```bash
-make test    # 54 tests · 0 unsafe outputs
-make report  # batch summary → reports/mixed_batch/mock_summary.json
-```
-
----
+Modern support and deployment workflows often fail because operational evidence is scattered across logs, docs, runbooks, and incident notes. AgentGrid turns those inputs into a structured, evidence-backed decision workflow.
 
 ## Architecture
 
+```text
+Input document/log/runbook
+        |
+        v
+[classify_issue]
+        |
+        v
+[retrieve_context]  ---> local RAG over docs/logs/runbooks
+        |
+        v
+[analyze_logs]      ---> MCP-style tool
+        |
+        v
+[create_action_plan] ---> MCP-style tool
+        |
+        v
+[generate_answer]
+        |
+        v
+[eval_gate]
+        |
+        v
+ship / hold / escalate
+What it does
+Classifies operational issues from docs, logs, and runbooks
+Retrieves supporting evidence with citations
+Calls MCP-style tools for document search, log analysis, and action planning
+Produces structured JSON outputs
+Tracks latency and tool-call success rate
+Runs an eval gate for correctness, citation coverage, unsupported answer detection, safety, and final decisioning
+Demo
+
+Run one document:
+
+python3 -m src.app --file data/docs/deployment_failure.txt
+
+Run the demo suite:
+
+python3 scripts/run_demo_suite.py
+
+The suite writes metrics to:
+
+reports/demo_metrics.json
+Example output
+{
+  "metrics": {
+    "latency_seconds": 0.0028,
+    "tool_call_success_rate": 1.0
+  },
+  "eval_gate": {
+    "correctness": true,
+    "citation_coverage": true,
+    "unsupported_answer": false,
+    "safety": true,
+    "final_decision": "ship"
+  }
+}
+MCP-style tools
+
+AgentGrid includes three tool-like functions:
+
+search_docs: retrieves evidence from docs, logs, and runbooks
+analyze_logs: detects timeout, retry, and latency degradation signals
+create_action_plan: generates operational next steps based on the classified issue
+Eval gate
+
+The eval gate checks:
+
+correctness
+citation coverage
+unsupported answer risk
+safety
+final decision: ship, hold, or escalate
+Metrics
+
+AgentGrid tracks:
+
+latency per request
+latency p50/p95 across demo suite
+tool-call success rate
+ship/hold/escalate counts
+API
+
+Run locally:
+
+uvicorn src.api.server:app --reload
+
+Health check:
+
+curl http://127.0.0.1:8000/health
+
+Run agent:
+
+curl -X POST "http://127.0.0.1:8000/run?input=DB%20timeout%20failure"
+Resume summary
+
+Built a production-style GenAI support and deployment system using LangGraph with RAG over documents, logs, and runbooks, MCP-style tools for retrieval/log analysis/action planning, observability metrics, and an eval gate for correctness, citation coverage, hallucination risk, safety, and ship/hold/escalate decisions.
+
+## Updated Architecture
+
+```text
+Query
+  |
+  v
+RAG over docs/logs/runbooks
+  |
+  v
+LangGraph workflow
+  |
+  v
+MCP-style tools
+  |
+  v
+Eval gate
+  |
+  v
+Decision: ship / hold / escalate
+  |
+  v
+AutoOps event emission
+API demo
+
+Run the API:
+
+uvicorn src.api.server:app --reload
+
+Request:
+
+curl -s -X POST http://127.0.0.1:8000/agent/run \
+  -H "Content-Type: application/json" \
+  -d '{"input":"Deployment failed because DB timeout caused retry storm and latency spike."}' \
+  | python3 -m json.tool
+
+The response includes:
+
+agent_output
+metrics
+eval_gate
+autoops_event
+Real Gemini mode
+
+Mock mode is the default.
+
+To run with Gemini:
+
+export USE_REAL_MODEL=true
+export GEMINI_API_KEY="your_key_here"
+python3 scripts/run_real_gemini_cases.py
+
+Outputs are saved under:
+
+reports/real_model_runs/
+
+
+Proof artifacts
+
+Mock mixed batch:
+
+python3 scripts/run_mixed_batch.py --n 25
+
+Output:
+
+reports/mixed_batch/mock_summary.json
+
+Real Gemini runs:
+
+export USE_REAL_MODEL=true
+export GEMINI_API_KEY="your_key_here"
+python3 scripts/run_real_gemini_cases.py --n 7
+
+Outputs:
+
+reports/real_model_runs/
+
+API demo response:
+
+reports/api_demo/tool_failure_api_response.json
+
+
+---
+
+## Google Gemini Support Case Study
+
+AgentGrid is also documented as a GenAI support-gating system for product support, support engineering, and AI reliability workflows.
+
+**Live demo:** https://agentgrid-seven.vercel.app/
+
+### Before
+
+A GenAI app could return an answer even when:
+
+- retrieval context was missing
+- evidence conflicted across sources
+- tool calls failed
+- latency exceeded the support budget
+- the generated answer was unsupported
+
+### After
+
+AgentGrid evaluates each run and returns one of three decisions:
+
+- `ship` — answer is supported and safe to return
+- `hold` — context, latency, or confidence is insufficient
+- `escalate` — evidence conflicts or a tool failure requires review
+
+Unsafe or uncertain cases are routed into AutoOps for support review, root-cause analysis, and engineering follow-up.
+
+### Support-validation proof
+
+| Metric | Value |
+|---|---:|
+| Validation runs | 25 |
+| Ship decisions | 9 |
+| Hold decisions | 10 |
+| Escalate decisions | 6 |
+| Unsafe outputs | 0 |
+| p95 latency | 258 ms |
+| Tool-call success rate | 0.88 |
+| AutoOps support-validation incidents | 102 |
+| Escalations | 51 |
+| Sources | 5 |
+| Issue families | 6 |
+
+### Architecture
+
+```mermaid
+flowchart TD
+    A[User query] --> B[AgentGrid RAG over docs, logs, runbooks]
+    B --> C[LangGraph workflow]
+    C --> D[MCP-style tools]
+    D --> E[Eval gate]
+    E --> F{Decision}
+    F -->|ship| G[Return supported answer]
+    F -->|hold| H[Emit hold event]
+    F -->|escalate| I[Emit escalation event]
+    H --> J[AutoOps ingestion]
+    I --> J
+    J --> K[Root cause, PM summary, engineering bug report, support action]
+    K --> L[Dashboard metrics]
+Try these demo scenarios
+
+Use the live demo with these cases:
+
+Missing context → HOLD
+Conflicting evidence → ESCALATE
+Tool failure → ESCALATE
+Latency breach → HOLD
+Normal supported answer → SHIP
+
+Detailed write-up: docs/google_gemini_support_case_study.md
+
+Proof artifacts:
+
+reports/google_gemini_support/validation_summary.json
+reports/google_gemini_support/scenario_results.json
+reports/google_gemini_support/autoops_ingestion_receipts.json
+reports/google_gemini_support/support_metrics_snapshot.json
+
+Metric scope: the 102 incidents are support-validation incidents generated from controlled failure scenarios. They are not customer production incidents.
+
+
+## Public Technical Report
+
+- [GenAI Support Gate Report](docs/genai_support_gate_report.md)
+- [API Contracts](docs/api_contracts/agentgrid_api.md)
+- [Escalation Taxonomy](docs/escalation_taxonomy.md)
+- [Reviewer Workflow](docs/reviewer_workflow.md)
+
+
+
+## Product / Full-Stack Proof Layer
+
+- [Dashboard Product Flow](docs/dashboard_product_flow.md)
+- [OpenAPI Summary](docs/openapi/agentgrid_openapi_summary.md)
+- [C# Minimal API Proof Layer](docs/dotnet_proof/csharp_minimal_api_proof_layer.md)
+- [Azure Deployment Notes](docs/integrations/azure_deployment_notes.md)
+- [M365 / Teams / Graph Integration Notes](docs/integrations/m365_teams_graph_integration_notes.md)
+
+
+
+## C# / .NET Proof Layer
+
+- [C# Minimal API Proof](csharp_service_demo/README.md)
+- [C# API Contract](csharp_service_demo/docs/api_contract.md)
+- [SQL Server Schema Notes](csharp_service_demo/docs/sql_server_schema.md)
+- [Azure Deployment Notes](csharp_service_demo/docs/azure_deployment_notes.md)
+
+
+
+## Visual Proof
+
 ![AgentGrid Architecture](screenshots/architecture_hero.png)
 
-```
-User query
-      │
-      ▼
-RAG retrieval  →  docs / logs / runbooks + citation check
-      │
-      ▼
-LangGraph workflow
-  classify → retrieve → analyze_logs → plan → generate
-      │
-      ▼
-Eval gate (5 signals)
-  correctness · citation coverage · hallucination risk · safety · latency
-      │
-      ├── all pass  →  SHIP
-      ├── any fail  →  HOLD  →  human review queue
-      └── critical  →  ESCALATE  →  AutoOps event + RCA
-      │
-      ▼
-Prometheus  →  tokens · cost · latency · tool success · escalation rate
-```
+| Proof | Screenshot |
+|---|---|
+| Live Dashboard | ![Dashboard](screenshots/dashboard.png) |
+| Workflow Trace | ![Workflow Trace](screenshots/workflow_trace.png) |
+| Eval Gate | ![Eval Gate](screenshots/eval_gate.png) |
+| MCP Tools | ![MCP Tools](screenshots/mcp_tools.png) |
+| Cloud Deployment | ![Cloud Run](screenshots/cloud_run.png) |
+| Trace Export | ![Trace Export](screenshots/trace_export.png) |
+| Latency / Cost | ![Latency Cost](screenshots/latency_cost_report.png) |
 
----
+## API Contract
 
-## Core Workflows
+- [OpenAPI Export](openapi/openapi.json)
 
-### 1. Eval gate enforcement
 
-Every answer passes 5 signals before shipping. Citation coverage = 0% → HOLD. Safety signal triggered → ESCALATE. No bypasses.
 
-```bash
-make demo
-# → 0 unsafe outputs · 9 ship · 10 hold · 6 escalate
-```
+## Controlled Benchmark Experiments
 
-### 2. Cost governance
+AgentGrid includes controlled evaluation workflows comparing:
 
-Tracks token usage and projected spend per query and per session. Projected overage → HOLD decision with cost context attached.
+- Gemini Flash
+- GPT-4o-mini
+- Claude Haiku
 
-```
-projected_spend: $700  budget: $500  →  decision: HOLD
-```
+Across:
+- retrieval grounding
+- unsupported-answer risk
+- latency
+- estimated cost/request
+- tool-call quality
 
-### 3. Retrieval drift detection
+See:
 
-Tracks retrieval hit rate over time. Drift from 0.91 → 0.76 triggers a HOLD — the system detects degrading retrieval quality before it produces unsupported answers.
+benchmarks/reports/benchmark_report.md
 
-```
-retrieval_hit_rate: 0.91 → 0.76  →  decision: HOLD
-```
 
----
+## System Design Notes
 
-## Failure Scenarios Covered
+- [Failure, State, and Scaling Notes](docs/system_design/failure_state_scaling.md)
 
-| Failure | Signal | Decision |
-|---|---|---|
-| Zero citation coverage | Unsupported claim | **HOLD** |
-| Safety signal triggered | Unsafe content | **ESCALATE** |
-| Tool call failure | `tool_success_rate` drop | **ESCALATE** |
-| Retrieval drift | Hit rate 0.91 → 0.76 | **HOLD** |
-| Latency SLO breach | p95 > threshold | **HOLD** |
-| Budget overrun | Projected spend > limit | **HOLD** |
-| Retry storm ingested | AutoOps incident type | **ESCALATE** |
 
----
+## AIOps / Support Engineering Proof
 
-## Engineering Decisions
+AgentGrid includes simulated operational-support artifacts for:
 
-**Why a 5-signal gate instead of a single confidence score:** A single score obscures which signal failed. A model can hallucinate confidently. Citation coverage, safety, and latency are independent failure modes that require independent gates.
+- Jira-style engineering issue creation
+- PagerDuty-style escalation payloads
+- Slack-style support-review alerts
+- customer feedback clustering
+- repeat issue family detection
+- RCA analytics reporting
 
-**Why LangGraph instead of a simple chain:** Each node in the workflow emits observable state. This makes the execution trace inspectable — you can see exactly which step produced a bad retrieval or a tool failure, not just that the answer was wrong.
+See:
 
-**Why escalate to AutoOps instead of retrying:** Retry amplifies the same failure. Escalation with structured context (incident type, tool status, gate decision) enables RCA. The system learns from failures instead of hiding them.
+- `ops_integrations/`
+- `customer_analytics/`
 
----
 
-## What Is Intentionally Out of Scope
+## End-to-End AI Support Incident Demo
 
-- 102 incidents are from controlled validation scenarios, not production customer incidents
-- Mock model is default; real model requires a Gemini API key
-- "MCP-style tools" is the tool-call pattern — not the full MCP protocol implementation
-- Redis-backed async workflows are architectural proof, not production-scale deployment
+AgentGrid + AutoOps includes one complete operational demo:
 
----
+bad GenAI support answer
+→ AgentGrid detects unsupported/missing context
+→ escalation artifact created
+→ AutoOps classifies recurring issue
+→ RCA + product feedback summary generated
 
-## Resume Bullets
+See:
+- demo_outputs/end_to_end_ai_support_incident.md
+- demo_outputs/end_to_end_ai_support_incident.json
 
-- Built an operational GenAI support platform with LangGraph orchestration, RAG retrieval, and a 5-signal eval gate (correctness, citation, hallucination, safety, latency) — 0 unsafe outputs across 25 validation runs
-- Implemented cost governance and retrieval drift detection as first-class gate signals; caught projected budget overage ($700 vs $500) and retrieval quality degradation (0.91 → 0.76) before answers shipped
-- Instrumented with per-query token tracking, escalation rate by issue type, and tool-call success rate; structured escalations emit AutoOps events for downstream RCA
 
----
+## Google ADK / GEAR Alignment
 
-## Interview Walkthrough
+AgentGrid includes a comparison artifact mapping its multi-agent orchestration, tool ecosystem, evaluation gates, observability, and deployment workflows to Google ADK / GEAR-style agent-system concepts.
 
-*"AgentGrid models what production AI support tooling needs to do: not just generate answers, but validate them before they ship. Every answer goes through a 5-signal eval gate. If citation coverage is zero, it holds for human review — it doesn't ship with a caveat. I also added cost governance and retrieval drift detection as gate signals. In 25 validation runs I had 0 unsafe outputs, with 9 ships, 10 holds, and 6 escalations. The escalations emit structured AutoOps events so failures generate RCA, not just logs."*
+See:
+- `comparisons/google_adk_gear_comparison.md`
 
----
+## Unsafe Answer → RCA Walkthrough
 
-## Run Locally
+AgentGrid + AutoOps includes a 2-minute demo script showing:
 
-```bash
-git clone https://github.com/kritibehl/agentgrid-demo && cd agentgrid-demo
-pip install -r requirements.txt
-make demo    # 25 validation cases
-make test    # 54 tests · 0 unsafe outputs
-make report  # batch summary
-```
+unsafe GenAI support answer
+→ eval-gate block
+→ escalation artifact
+→ recurring issue classification
+→ RCA
+→ product feedback
 
----
+See:
+- `demo_outputs/video_script/unsafe_answer_to_rca_walkthrough.md`
 
-## Repository Map
 
-```
-agentgrid-demo/
-├── src/api/         FastAPI server
-├── src/agent/       LangGraph workflow + eval gate
-├── src/tools/       MCP-style tool implementations
-├── src/rag/         Retrieval over docs/logs/runbooks
-├── scripts/         Batch validation + real model runners
-├── reports/         Gate decision outputs
-├── screenshots/     Dashboard · trace · eval gate · tools
-└── docs/            Architecture + case study
-```
+## Google ADK / GEAR-Style Agent System Alignment
+
+![Google ADK / GEAR-Aligned Agent System](https://img.shields.io/badge/Google%20ADK%20%2F%20GEAR-Aligned%20Agent%20System-4285F4?style=for-the-badge)
+![MCP Style Tools](https://img.shields.io/badge/MCP--Style-Tool%20Server-34A853?style=for-the-badge)
+![Eval Gates](https://img.shields.io/badge/Eval%20Gates-Ship%20%2F%20Hold%20%2F%20Escalate-FBBC05?style=for-the-badge)
+
+
+AgentGrid is conceptually aligned with ADK/GEAR-style agent-system patterns: multi-agent orchestration, tool execution, evaluation gates, traceability, escalation routing, and deployment-oriented GenAI workflows.
+
+- [Google ADK / GEAR Comparison](comparisons/google_adk_gear_comparison.md)
+- [Unsafe Answer → RCA Walkthrough Script](demo_outputs/video_script/unsafe_answer_to_rca_walkthrough.md)
+- [Unsafe Answer → RCA Demo Video](demo_outputs/video/unsafe_answer_to_rca_demo.mp4)
+- [Real Trace Viewer Screenshot](screenshots/real_trace_viewer.png)
+
+
+## Walkthrough Demo Video
+
+A polished 2-minute walkthrough script is available here:
+
+- `demo_outputs/walkthrough/agentgrid_walkthrough_video_script.md`
+
+The walkthrough covers:
+
+- trace viewer
+- unsafe answer detection
+- HOLD decision
+- escalation
+- RCA generation
+- deployment/release state
+- human-review workflow
+
+
+## Frontend Architecture
+
+AgentGrid includes a React/TypeScript operational dashboard with:
+
+- reusable component system
+- typed API client
+- state-driven rendering
+- dark/light UI
+- loading and error states
+- retry request UI
+- responsive layouts
+- trace viewer
+- incident timeline
+- evaluation gate panel
+- deployment/release visualization
+- operational metrics charts
+
+See:
+- `docs/frontend/frontend_architecture.md`
+- `dashboard/src/`
+
+
+## Frontend Visual Proof
+
+Live demo:
+
+- https://agentgrid-seven.vercel.app
+
+Recommended screenshot set:
+
+- `screenshots/frontend/dashboard_dark.png`
+- `screenshots/frontend/dashboard_light.png`
+- `screenshots/frontend/trace_viewer.png`
+- `screenshots/frontend/metrics_cards.png`
+- `screenshots/frontend/incident_timeline.png`
+- `screenshots/frontend/release_visualization.png`
+- `screenshots/frontend/mobile_responsive.png`
+
+Screenshot checklist:
+
+- `screenshots/frontend/screenshot_checklist.md`
+
+
+## AI Platform Infrastructure Proof
+
+AgentGrid includes infrastructure-style workflows for Nokia-aligned AI platform roles:
+
+- Kafka-style event ingestion for user query, retrieval, eval-gate, escalation, and latency telemetry events
+- async agent-event processing with queue lag, retry count, failed event count, and processing latency metrics
+- vector-index lifecycle workflows covering document chunking, embedding generation, stale-index refresh, and retrieval benchmarking
+- graph-based multi-agent orchestration with planner, retriever, evaluator, escalation, and response-synthesis agents
+
+See:
+- `streaming/`
+- `vector_indexing/`
+- `orchestration_graph/`
+
+
+## Customer Solution and Frontend Quality Proof
+
+AgentGrid includes customer-solution and frontend-quality artifacts showing:
+
+- customer issue → technical requirement mapping
+- AI workflow design decisions
+- operational metrics and escalation loops
+- React/TypeScript component contracts
+- loading, error, retry, empty, and success states
+- dashboard accessibility notes
+- AI-assisted development guardrails
+
+See:
+- `customer_solution_demo/`
+- `frontend_quality/`
+- `ai_productivity/`
+
+
+## Streaming Runtime Proof
+
+AgentGrid includes streaming-runtime artifacts for AI platform/customer-solution roles:
+
+- event stream topology
+- consumer-lag report
+- dead-letter queue design
+- stream replay workflow
+- window processor with retry, failure, lag, and backpressure telemetry
+
+See:
+- `streaming_runtime/`
+
+
+## Vector Retrieval Lifecycle and Multi-Agent Runtime
+
+AgentGrid includes infrastructure-style retrieval and orchestration workflows covering:
+
+- embedding refresh strategies
+- stale embedding recovery
+- hybrid lexical-semantic retrieval
+- retrieval cache behavior
+- retrieval-quality benchmarking
+- graph-based multi-agent execution
+- evaluation checkpoints
+- escalation routing
+
+See:
+- `vector_retrieval_lifecycle/`
+- `multi_agent_runtime/`
+
+
+## Agent Failure Recovery
+
+AgentGrid includes robustness workflows for:
+
+- tool timeout
+- retrieval miss
+- agent crash
+- escalation routing
+- human review
+- fallback responses
+- trace preservation
+
+See:
+- `agent_failure_recovery/`
+
+
+## Human Review Lifecycle
+
+AgentGrid includes a review queue workflow showing:
+
+- agent output
+- eval-gate block
+- human review
+- approval / rejection
+- release state
+- governance history
+
+See:
+- `review_queue/`
+
+
+## Applied RAG / MCP / Agentic Workflows
+
+AgentGrid includes applied GenAI workflows for:
+
+- MCP-style RAG analytics
+- retrieval-quality monitoring
+- multi-agent analytics pipelines
+- product-search analysis
+- recommendation review
+- RAG-based answer generation
+- eval-gated release decisions
+
+See:
+- `mcp_rag_analytics/`
+- `agentic_retail_workflows/`
+
+
+## Retail Personalization Workflows
+
+AgentGrid includes Apple Store Online-aligned personalization workflows showing:
+
+- user segmentation
+- recommendation experiments
+- evidence-based personalized messaging
+- eval-gated personalization decisions
+- message relevance scoring
+
+See:
+- `retail_personalization/`
+
+
+## Apple Store Online Product Discovery Demo
+
+AgentGrid includes a visual product-discovery demo for Apple Store Online-style personalization workflows:
+
+customer segment
+→ product search
+→ recommendation review
+→ RAG answer
+→ eval gate
+→ release decision
+
+See:
+
+- `docs/apple_store_online_demo.md`
+- `docs/images/product_discovery_flow.png`
+- `docs/images/personalization_eval_report.png`
+
+
+## Agent Observability, Replay, and Guardrails
+
+AgentGrid includes production-style agent infrastructure proof covering:
+
+- trace schema
+- retrieval hit rate
+- tool success rate
+- p95 latency
+- cost per run
+- eval-gate outcomes
+- trace-level failure reasons
+- replayable saved agent runs
+- human-review resume checkpoints
+- guardrail failure taxonomy
+
+See:
+- `agent_observability/`
+- `agent_replay/`
+- `guardrail_taxonomy/`
+
+
+## Cost Governance and Evaluation Drift
+
+AgentGrid includes AI operations governance workflows for:
+
+- cost per run
+- projected monthly spend
+- budget risk detection
+- release budget gates
+- baseline vs current evaluation drift
+- retrieval quality regression detection
+- latency and unsupported-answer drift tracking
+
+See:
+- `cost_governance/`
+- `evaluation_drift/`
+
+
+## Trace Analytics and Distributed Eval Processing
+
+AgentGrid includes trace analytics and batch-processing workflows for AI evaluation data:
+
+- structured JSONL agent traces
+- retrieval hit-rate aggregation
+- tool-success aggregation
+- latency and cost summaries
+- model-version comparison
+- escalation trend reporting
+- PySpark-compatible evaluation trace aggregation
+
+See:
+- `agent_observability/sample_traces.jsonl`
+- `agent_observability/analyze_traces.py`
+- `distributed_eval_processing/`
