@@ -1,0 +1,6 @@
+{"entity_id":"p_001","name":"Blue Bottle Coffee","category":"coffee","city":"San Francisco","attributes":{"open_now":true,"rating":4.5,"price":"$$"}}
+{"entity_id":"p_002","name":"Sightglass Coffee","category":"coffee","city":"San Francisco","attributes":{"open_now":true,"rating":4.6,"price":"$$"}}
+{"entity_id":"p_003","name":"Golden Gate Park","category":"park","city":"San Francisco","attributes":{"open_now":true,"rating":4.8,"price":"free"}}
+{"entity_id":"p_004","name":"MoMA Design Store","category":"shopping","city":"New York","attributes":{"open_now":false,"rating":4.4,"price":"$$$"}}
+{"entity_id":"p_005","name":"Joe's Pizza","category":"pizza","city":"New York","attributes":{"open_now":true,"rating":4.7,"price":"$"}}
+{"entity_id":"p_006","name":"Joe Pizza","category":"pizza","city":"New York","attributes":{"open_now":true,"rating":4.1}}

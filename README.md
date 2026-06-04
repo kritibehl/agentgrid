@@ -718,3 +718,18 @@ See:
 - `agent_observability/sample_traces.jsonl`
 - `agent_observability/analyze_traces.py`
 - `distributed_eval_processing/`
+
+
+## Places / Entity Search Evaluation Pack
+
+AgentGrid includes an entity-search evaluation pack for places/product-discovery style retrieval:
+
+- retrieval hit rate
+- entity match accuracy
+- duplicate entity rate
+- missing attribute rate
+- ranking quality
+- grounded answer pass rate
+
+See:
+- `entity_search_eval/`

@@ -1,0 +1,4 @@
+{"query_id":"q_001","query":"coffee open now in San Francisco","expected_entity_ids":["p_002","p_001"],"required_attributes":["open_now","rating","price"]}
+{"query_id":"q_002","query":"free park in San Francisco","expected_entity_ids":["p_003"],"required_attributes":["open_now","rating","price"]}
+{"query_id":"q_003","query":"pizza in New York","expected_entity_ids":["p_005"],"required_attributes":["open_now","rating","price"]}
+{"query_id":"q_004","query":"design shopping New York","expected_entity_ids":["p_004"],"required_attributes":["open_now","rating","price"]}

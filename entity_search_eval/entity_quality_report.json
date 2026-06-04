@@ -1,0 +1,85 @@
+{
+  "query_count": 4,
+  "retrieval_hit_rate": 1.0,
+  "entity_match_accuracy": 1.0,
+  "duplicate_entity_rate": 0.33,
+  "missing_attribute_rate": 0.06,
+  "ranking_quality": 1.0,
+  "grounded_answer_pass_rate": 1.0,
+  "release_decision": "ship",
+  "per_query": [
+    {
+      "query_id": "q_001",
+      "query": "coffee open now in San Francisco",
+      "expected_entity_ids": [
+        "p_002",
+        "p_001"
+      ],
+      "result_entity_ids": [
+        "p_002",
+        "p_001",
+        "p_003"
+      ],
+      "hit_count": 2,
+      "first_result_match": true,
+      "duplicate_entity_rate": 0.33,
+      "missing_attribute_rate": 0.0,
+      "ranking_quality": 1.0,
+      "grounded_answer_pass": true
+    },
+    {
+      "query_id": "q_002",
+      "query": "free park in San Francisco",
+      "expected_entity_ids": [
+        "p_003"
+      ],
+      "result_entity_ids": [
+        "p_003",
+        "p_002",
+        "p_001"
+      ],
+      "hit_count": 1,
+      "first_result_match": true,
+      "duplicate_entity_rate": 0.33,
+      "missing_attribute_rate": 0.0,
+      "ranking_quality": 1.0,
+      "grounded_answer_pass": true
+    },
+    {
+      "query_id": "q_003",
+      "query": "pizza in New York",
+      "expected_entity_ids": [
+        "p_005"
+      ],
+      "result_entity_ids": [
+        "p_005",
+        "p_004",
+        "p_006"
+      ],
+      "hit_count": 1,
+      "first_result_match": true,
+      "duplicate_entity_rate": 0.33,
+      "missing_attribute_rate": 0.11,
+      "ranking_quality": 1.0,
+      "grounded_answer_pass": true
+    },
+    {
+      "query_id": "q_004",
+      "query": "design shopping New York",
+      "expected_entity_ids": [
+        "p_004"
+      ],
+      "result_entity_ids": [
+        "p_004",
+        "p_005",
+        "p_006"
+      ],
+      "hit_count": 1,
+      "first_result_match": true,
+      "duplicate_entity_rate": 0.33,
+      "missing_attribute_rate": 0.11,
+      "ranking_quality": 1.0,
+      "grounded_answer_pass": true
+    }
+  ]
+}
