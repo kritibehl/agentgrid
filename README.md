@@ -1,5 +1,39 @@
 
 
+## 30-Second Proof
+
+| Signal | Verified value |
+|---|---:|
+| Tests passing | 57 |
+| Retrieval hit rate | 0.80–1.00 |
+| Tool success rate | 0.80 |
+| p95 latency | 880 ms |
+| Cost per run | $0.0132 avg |
+| Release decision | HOLD on quality risk / SHIP on grounded entity search |
+| Eval coverage | RAG, tools, entity search, drift, cost, guardrails |
+| Frontend proof | React/TypeScript dashboard + trace viewer |
+| Governance proof | human review + replay + release gates |
+
+## Evaluation Warehouse Snapshot
+
+AgentGrid tracks structured AI workflow quality across:
+
+- retrieval quality
+- tool failures
+- latency
+- cost
+- model-version metrics
+- eval-gate outcomes
+- entity-search quality
+- drift detection
+- human-review decisions
+
+Recommended screenshot:
+
+`docs/images/evaluation_warehouse_snapshot.png`
+
+
+
 ## Live Demo
 
 - https://agentgrid-seven.vercel.app
