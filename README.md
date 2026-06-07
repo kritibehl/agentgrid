@@ -733,3 +733,15 @@ AgentGrid includes an entity-search evaluation pack for places/product-discovery
 
 See:
 - `entity_search_eval/`
+
+---
+
+## Developer Copilot, Workflow Studio, and Evaluation Warehouse
+
+AgentGrid includes internal developer-tooling workflows:
+
+- `developer_copilot/` maps incidents, traces, and runbook signals into RCA reports.
+- `workflow_studio/` represents operational workflows as execution graphs across retrieval, tools, evaluation, escalation, and response synthesis.
+- `evaluation_warehouse/` tracks retrieval hit rate, tool success rate, latency, cost, eval outcomes, and release decisions.
+
+Safe scope: simulated AI platform/internal tooling workflows. This does not claim production deployment, customer support ownership, or autonomous incident remediation.

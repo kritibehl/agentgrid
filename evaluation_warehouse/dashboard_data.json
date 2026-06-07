@@ -1,0 +1,16 @@
+{
+  "release_id": "agentgrid_eval_v1",
+  "metrics": {
+    "retrieval_hit_rate": 0.75,
+    "tool_success_rate": 0.75,
+    "p95_latency_ms": 940,
+    "avg_cost_usd": 0.0168,
+    "eval_pass": 2,
+    "eval_hold": 2
+  },
+  "release_decision": "hold",
+  "hold_reasons": [
+    "retrieval hit rate below 0.80",
+    "tool success rate below 0.90"
+  ]
+}
