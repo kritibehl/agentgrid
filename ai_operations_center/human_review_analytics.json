@@ -1,0 +1,15 @@
+{
+  "reviewed_outputs": 25,
+  "approved_outputs": 17,
+  "overridden_outputs": 6,
+  "rejected_outputs": 2,
+  "approval_rate": 0.68,
+  "override_rate": 0.24,
+  "rejection_rate": 0.08,
+  "top_override_reasons": [
+    "unsupported root-cause certainty",
+    "missing retrieval evidence",
+    "unsafe operational action"
+  ],
+  "status": "healthy_review_loop"
+}

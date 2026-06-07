@@ -779,3 +779,20 @@ AgentGrid includes internal developer-tooling workflows:
 - `evaluation_warehouse/` tracks retrieval hit rate, tool success rate, latency, cost, eval outcomes, and release decisions.
 
 Safe scope: simulated AI platform/internal tooling workflows. This does not claim production deployment, customer support ownership, or autonomous incident remediation.
+
+
+## AI Operations Center
+
+AgentGrid includes AI operations reporting for:
+
+- agent reliability scorecards
+- retrieval quality
+- tool success
+- hallucination-risk tracking
+- cost governance
+- waste estimation
+- optimization recommendations
+- human-review approval and override analytics
+
+See:
+- `ai_operations_center/`

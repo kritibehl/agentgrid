@@ -1,0 +1,10 @@
+{
+  "retrieval": 0.82,
+  "tool_success": 0.91,
+  "hallucination_risk": 0.07,
+  "latency_health": 0.86,
+  "review_readiness": 0.88,
+  "overall_reliability_score": 0.85,
+  "status": "watch",
+  "recommended_action": "monitor retrieval quality and hallucination-risk trend"
+}
