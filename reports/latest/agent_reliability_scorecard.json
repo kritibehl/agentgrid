@@ -1,0 +1,11 @@
+{
+  "project": "AgentGrid",
+  "retrieval_hit_rate": 0.80,
+  "tool_success_rate": 0.80,
+  "p95_latency_ms": 880,
+  "human_review_gates": "enabled",
+  "cost_per_run_avg": 0.0132,
+  "release_decision": "HOLD",
+  "hold_reason": "quality risk on entity search scenario",
+  "tests_passing": 57
+}
