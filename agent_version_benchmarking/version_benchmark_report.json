@@ -1,0 +1,54 @@
+{
+  "benchmark": "agent_version_comparison",
+  "versions": [
+    "agent_v1",
+    "agent_v2"
+  ],
+  "comparisons": {
+    "retrieval_hit_rate": {
+      "agent_v1": 0.76,
+      "agent_v2": 0.89,
+      "delta": 0.13,
+      "percent_change": 17.11,
+      "improved": true
+    },
+    "tool_success_rate": {
+      "agent_v1": 0.88,
+      "agent_v2": 0.94,
+      "delta": 0.06,
+      "percent_change": 6.82,
+      "improved": true
+    },
+    "p95_latency_ms": {
+      "agent_v1": 940,
+      "agent_v2": 820,
+      "delta": -120,
+      "percent_change": -12.77,
+      "improved": true
+    },
+    "cost_per_run_usd": {
+      "agent_v1": 0.018,
+      "agent_v2": 0.014,
+      "delta": -0.004,
+      "percent_change": -22.22,
+      "improved": true
+    },
+    "eval_pass_rate": {
+      "agent_v1": 0.71,
+      "agent_v2": 0.84,
+      "delta": 0.13,
+      "percent_change": 18.31,
+      "improved": true
+    }
+  },
+  "regressions": [],
+  "winner": "agent_v2",
+  "release_decision": "ship_agent_v2",
+  "summary": {
+    "retrieval_hit_rate_gain": 0.13,
+    "tool_success_rate_gain": 0.06,
+    "p95_latency_ms_delta": -120,
+    "cost_per_run_delta": -0.004,
+    "eval_pass_rate_gain": 0.13
+  }
+}

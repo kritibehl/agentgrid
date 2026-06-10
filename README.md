@@ -176,3 +176,19 @@ make test
   "hold_reason": "quality risk on entity search scenario"
 }
 ```
+
+
+## Agent Version Benchmarking
+
+AgentGrid includes agent-version benchmarking for RAG workflow releases:
+
+- agent_v1 vs agent_v2
+- retrieval hit rate
+- tool success rate
+- p95 latency
+- cost per run
+- eval pass rate
+- release decision
+
+See:
+- `agent_version_benchmarking/`

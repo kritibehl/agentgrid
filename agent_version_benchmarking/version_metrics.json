@@ -1,0 +1,16 @@
+{
+  "agent_v1": {
+    "retrieval_hit_rate": 0.76,
+    "tool_success_rate": 0.88,
+    "p95_latency_ms": 940,
+    "cost_per_run_usd": 0.018,
+    "eval_pass_rate": 0.71
+  },
+  "agent_v2": {
+    "retrieval_hit_rate": 0.89,
+    "tool_success_rate": 0.94,
+    "p95_latency_ms": 820,
+    "cost_per_run_usd": 0.014,
+    "eval_pass_rate": 0.84
+  }
+}
