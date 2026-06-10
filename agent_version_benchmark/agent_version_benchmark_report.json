@@ -1,0 +1,29 @@
+{
+  "benchmark": "agent_version_benchmark",
+  "baseline": {
+    "agent_version": "agent_v1",
+    "retrieval_hit_rate": 0.72,
+    "tool_success_rate": 0.74,
+    "p95_latency_ms": 1120,
+    "cost_per_run_usd": 0.021,
+    "eval_pass_rate": 0.7,
+    "eval_gate": "HOLD"
+  },
+  "candidate": {
+    "agent_version": "agent_v2",
+    "retrieval_hit_rate": 0.84,
+    "tool_success_rate": 0.89,
+    "p95_latency_ms": 940,
+    "cost_per_run_usd": 0.0168,
+    "eval_pass_rate": 0.86,
+    "eval_gate": "PASS"
+  },
+  "improvements": {
+    "retrieval_hit_rate_delta": 0.12,
+    "tool_success_rate_delta": 0.15,
+    "p95_latency_ms_delta": -180,
+    "cost_per_run_usd_delta": -0.0042,
+    "eval_pass_rate_delta": 0.16
+  },
+  "release_decision": "PROMOTE_AGENT_V2"
+}
