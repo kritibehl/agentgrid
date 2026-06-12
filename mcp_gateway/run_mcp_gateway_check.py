@@ -63,6 +63,8 @@ def build_markdown(report, trace):
         for tool in report["tools"]
     )
 
+    example_call = json.dumps(trace["calls"][0], indent=2)
+
     return f"""# MCP Gateway Tool Health Report
 
 ## Summary
@@ -83,7 +85,7 @@ def build_markdown(report, trace):
 ## Example MCP Call
 
 ```json
-{json.dumps(trace['calls'][0], indent=2)}
+{example_call}
 Scope
 
 This is an MCP-style gateway proof for AI agents and workflow automation. It does not claim production Tesla integrations or real fleet data access.
