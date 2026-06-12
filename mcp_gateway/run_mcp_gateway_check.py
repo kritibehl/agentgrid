@@ -24,16 +24,10 @@ def run_gateway_check():
         "calls": [
             {
                 "tool": "fleet_query",
-                "input": {
-                    "fleet_id": "fleet_demo_001",
-                    "metric": "availability"
-                },
+                "input": {"fleet_id": "fleet_demo_001", "metric": "availability"},
                 "latency_ms": 120,
                 "status": "healthy",
-                "output": {
-                    "value": 0.997,
-                    "status": "nominal"
-                }
+                "output": {"value": 0.997, "status": "nominal"}
             },
             {
                 "tool": "workflow_trigger",
@@ -43,10 +37,7 @@ def run_gateway_check():
                 },
                 "latency_ms": 145,
                 "status": "healthy",
-                "output": {
-                    "triggered": True,
-                    "workflow_status": "queued"
-                }
+                "output": {"triggered": True, "workflow_status": "queued"}
             }
         ]
     }
@@ -65,31 +56,28 @@ def build_markdown(report, trace):
 
     example_call = json.dumps(trace["calls"][0], indent=2)
 
-    return f"""# MCP Gateway Tool Health Report
+    return (
+        "# MCP Gateway Tool Health Report\n\n"
+        "## Summary\n\n"
+        "| Metric | Value |\n"
+        "|---|---:|\n"
+        f"| tool_count | {report['tool_count']} |\n"
+        f"| healthy_tools | {report['healthy_tools']} |\n"
+        f"| avg_latency_ms | {report['avg_latency_ms']} |\n"
+        f"| gateway_status | {report['status']} |\n\n"
+        "## Tool Health\n\n"
+        "| Tool | Latency ms | Status |\n"
+        "|---|---:|---|\n"
+        f"{rows}\n\n"
+        "## Example MCP Call\n\n"
+        "```json\n"
+        f"{example_call}\n"
+        "```\n\n"
+        "## Scope\n\n"
+        "This is an MCP-style gateway proof for AI agents and workflow automation. "
+        "It does not claim production Tesla integrations or real fleet data access.\n"
+    )
 
-## Summary
 
-| Metric | Value |
-|---|---:|
-| tool_count | {report['tool_count']} |
-| healthy_tools | {report['healthy_tools']} |
-| avg_latency_ms | {report['avg_latency_ms']} |
-| gateway_status | {report['status']} |
-
-## Tool Health
-
-| Tool | Latency ms | Status |
-|---|---:|---|
-{rows}
-
-## Example MCP Call
-
-```json
-{example_call}
-Scope
-
-This is an MCP-style gateway proof for AI agents and workflow automation. It does not claim production Tesla integrations or real fleet data access.
-"""
-
-if name == "main":
-print(json.dumps(run_gateway_check(), indent=2))
+if __name__ == "__main__":
+    print(json.dumps(run_gateway_check(), indent=2))

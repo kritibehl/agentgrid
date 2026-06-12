@@ -1,0 +1,31 @@
+{
+  "trace_id": "mcp_trace_001",
+  "calls": [
+    {
+      "tool": "fleet_query",
+      "input": {
+        "fleet_id": "fleet_demo_001",
+        "metric": "availability"
+      },
+      "latency_ms": 120,
+      "status": "healthy",
+      "output": {
+        "value": 0.997,
+        "status": "nominal"
+      }
+    },
+    {
+      "tool": "workflow_trigger",
+      "input": {
+        "workflow_id": "support_escalation_review",
+        "trace_id": "mcp_trace_001"
+      },
+      "latency_ms": 145,
+      "status": "healthy",
+      "output": {
+        "triggered": true,
+        "workflow_status": "queued"
+      }
+    }
+  ]
+}
