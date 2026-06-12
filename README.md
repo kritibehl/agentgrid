@@ -192,3 +192,18 @@ AgentGrid includes agent-version benchmarking for RAG workflow releases:
 
 See:
 - `agent_version_benchmarking/`
+
+
+## MCP Gateway Infrastructure
+
+AgentGrid includes an MCP-style gateway layer for AI agents and workflow automation:
+
+- tool registry
+- tool health report
+- MCP call trace
+- fleet-style query tool
+- workflow trigger tool
+- incident lookup tool
+
+See:
+- `mcp_gateway/`
