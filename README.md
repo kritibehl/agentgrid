@@ -220,3 +220,19 @@ AgentGrid includes an analytics warehouse layer for AI workflow reporting:
 
 See:
 - `analytics_warehouse/`
+
+
+## Product Analytics
+
+AgentGrid includes product analytics workflows for AI-agent usage:
+
+- DAU / WAU reporting
+- activation funnel conversion
+- cohort retention
+- agent adoption by segment
+- experiment A/B lift
+- workflow completion rate
+- quality improvement after workflow changes
+
+See:
+- `product_analytics/`

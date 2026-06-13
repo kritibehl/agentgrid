@@ -1,0 +1,4 @@
+segment,users,agent_runs,workflow_completion_rate,tool_success_rate,avg_quality_score
+enterprise,2,2,1.0,1.0,0.835
+startup,2,2,0.5,0.5,0.735
+student,1,1,1.0,1.0,0.89
