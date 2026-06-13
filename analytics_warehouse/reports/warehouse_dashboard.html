@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>AgentGrid Analytics Warehouse</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; background: #0f172a; color: #e5e7eb; }
+    h1, h2 { color: #93c5fd; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 28px; background: #111827; }
+    th, td { border: 1px solid #374151; padding: 10px; text-align: left; }
+    th { background: #1f2937; }
+    .card { padding: 16px; border: 1px solid #334155; border-radius: 12px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>AgentGrid Analytics Warehouse</h1>
+  <div class="card">
+    <p><b>Tables:</b> users, tools, runs, retrieval_events, eval_scores, tool_calls</p>
+    <p><b>Runs:</b> 5</p>
+    <p><b>Users:</b> 3</p>
+    <p><b>Tools:</b> 3</p>
+  </div>
+
+  <h2>Failure Rate by Workflow Version</h2>
+  <table><thead><tr><th>workflow_version</th><th>total_runs</th><th>failed_or_blocked_runs</th><th>failure_rate</th></tr></thead><tbody><tr><td>agent_v1</td><td>2</td><td>1</td><td>0.5</td></tr><tr><td>agent_v2</td><td>3</td><td>1</td><td>0.333</td></tr></tbody></table>
+
+  <h2>Latency by Workflow Version</h2>
+  <table><thead><tr><th>workflow_version</th><th>workflow_name</th><th>run_count</th><th>avg_latency_ms</th><th>max_latency_ms</th></tr></thead><tbody><tr><td>agent_v1</td><td>rag_support</td><td>2</td><td>960.0</td><td>980</td></tr><tr><td>agent_v2</td><td>entity_search</td><td>1</td><td>610.0</td><td>610</td></tr><tr><td>agent_v2</td><td>mcp_gateway</td><td>1</td><td>760.0</td><td>760</td></tr><tr><td>agent_v2</td><td>rag_support</td><td>1</td><td>820.0</td><td>820</td></tr></tbody></table>
+
+  <h2>Retrieval Quality</h2>
+  <table><thead><tr><th>workflow_version</th><th>retrieval_hit_rate</th><th>avg_retrieved_doc_count</th></tr></thead><tbody><tr><td>agent_v1</td><td>0.5</td><td>1.0</td></tr><tr><td>agent_v2</td><td>1.0</td><td>2.33</td></tr></tbody></table>
+
+  <h2>Eval Quality</h2>
+  <table><thead><tr><th>workflow_version</th><th>avg_groundedness_score</th><th>avg_hallucination_risk</th><th>ship_decisions</th><th>blocked_decisions</th></tr></thead><tbody><tr><td>agent_v1</td><td>0.69</td><td>0.14</td><td>1</td><td>1</td></tr><tr><td>agent_v2</td><td>0.86</td><td>0.063</td><td>2</td><td>1</td></tr></tbody></table>
+</body>
+</html>

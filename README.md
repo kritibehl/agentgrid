@@ -207,3 +207,16 @@ AgentGrid includes an MCP-style gateway layer for AI agents and workflow automat
 
 See:
 - `mcp_gateway/`
+
+
+## Analytics Warehouse
+
+AgentGrid includes an analytics warehouse layer for AI workflow reporting:
+
+- warehouse tables for runs, users, tools, retrieval events, eval scores, and tool calls
+- SQL reports for DAU/WAU-style usage, failure rate, latency by workflow version, retrieval quality, and eval quality
+- generated CSV and HTML dashboard reports
+- data quality checks for nulls, freshness, and schema validity
+
+See:
+- `analytics_warehouse/`

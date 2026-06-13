@@ -1,0 +1,92 @@
+{
+  "tables": [
+    "users",
+    "tools",
+    "runs",
+    "retrieval_events",
+    "eval_scores",
+    "tool_calls"
+  ],
+  "runs": 5,
+  "users": 3,
+  "tools": 3,
+  "reports_generated": [
+    "eval_quality",
+    "failure_rate",
+    "latency_by_workflow_version",
+    "retrieval_quality",
+    "workflow_usage"
+  ],
+  "failure_rate_by_version": [
+    {
+      "workflow_version": "agent_v1",
+      "total_runs": 2,
+      "failed_or_blocked_runs": 1,
+      "failure_rate": 0.5
+    },
+    {
+      "workflow_version": "agent_v2",
+      "total_runs": 3,
+      "failed_or_blocked_runs": 1,
+      "failure_rate": 0.333
+    }
+  ],
+  "latency_by_workflow_version": [
+    {
+      "workflow_version": "agent_v1",
+      "workflow_name": "rag_support",
+      "run_count": 2,
+      "avg_latency_ms": 960.0,
+      "max_latency_ms": 980
+    },
+    {
+      "workflow_version": "agent_v2",
+      "workflow_name": "entity_search",
+      "run_count": 1,
+      "avg_latency_ms": 610.0,
+      "max_latency_ms": 610
+    },
+    {
+      "workflow_version": "agent_v2",
+      "workflow_name": "mcp_gateway",
+      "run_count": 1,
+      "avg_latency_ms": 760.0,
+      "max_latency_ms": 760
+    },
+    {
+      "workflow_version": "agent_v2",
+      "workflow_name": "rag_support",
+      "run_count": 1,
+      "avg_latency_ms": 820.0,
+      "max_latency_ms": 820
+    }
+  ],
+  "retrieval_quality": [
+    {
+      "workflow_version": "agent_v1",
+      "retrieval_hit_rate": 0.5,
+      "avg_retrieved_doc_count": 1.0
+    },
+    {
+      "workflow_version": "agent_v2",
+      "retrieval_hit_rate": 1.0,
+      "avg_retrieved_doc_count": 2.33
+    }
+  ],
+  "eval_quality": [
+    {
+      "workflow_version": "agent_v1",
+      "avg_groundedness_score": 0.69,
+      "avg_hallucination_risk": 0.14,
+      "ship_decisions": 1,
+      "blocked_decisions": 1
+    },
+    {
+      "workflow_version": "agent_v2",
+      "avg_groundedness_score": 0.86,
+      "avg_hallucination_risk": 0.063,
+      "ship_decisions": 2,
+      "blocked_decisions": 1
+    }
+  ]
+}

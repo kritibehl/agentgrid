@@ -1,0 +1,5 @@
+workflow_version,workflow_name,run_count,avg_latency_ms,max_latency_ms
+agent_v1,rag_support,2,960.0,980
+agent_v2,entity_search,1,610.0,610
+agent_v2,mcp_gateway,1,760.0,760
+agent_v2,rag_support,1,820.0,820
