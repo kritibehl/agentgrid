@@ -1,0 +1,35 @@
+{
+  "runs": [
+    {
+      "run_id": "rt_001",
+      "workflow_name": "claude_tool_use",
+      "model_name": "claude-style",
+      "prompt_tokens": 900,
+      "completion_tokens": 240,
+      "estimated_cost": 0.018,
+      "latency_ms": 820,
+      "tool_calls": 4,
+      "retry_count": 1,
+      "failure_reason": null,
+      "eval_status": "pass",
+      "release_decision": "ship"
+    },
+    {
+      "run_id": "rt_002",
+      "workflow_name": "rag_eval",
+      "model_name": "deterministic-rag",
+      "prompt_tokens": 700,
+      "completion_tokens": 180,
+      "estimated_cost": 0.011,
+      "latency_ms": 760,
+      "tool_calls": 2,
+      "retry_count": 0,
+      "failure_reason": "missing_retrieval",
+      "eval_status": "hold",
+      "release_decision": "human_review"
+    }
+  ],
+  "avg_cost": 0.0145,
+  "p95_latency_ms": 820,
+  "human_review_rate": 0.5
+}

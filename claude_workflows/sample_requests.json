@@ -1,0 +1,10 @@
+[
+  {
+    "request_id": "claude_001",
+    "user_request": "Investigate missing retrieval context and create a handoff note."
+  },
+  {
+    "request_id": "claude_002",
+    "user_request": "Summarize unsafe operational claim and validate grounding."
+  }
+]

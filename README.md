@@ -236,3 +236,25 @@ AgentGrid includes product analytics workflows for AI-agent usage:
 
 See:
 - `product_analytics/`
+
+## Agentic AI Workflow Platform Layer
+
+AgentGrid includes a focused agentic AI workflow layer covering:
+
+- Claude-style tool-use workflows
+- structured JSON outputs
+- validation and human-review routing
+- Promptfoo-style evaluation gates
+- RAGAS-style RAG evaluation
+- runtime telemetry for tokens, cost, latency, tools, retries, and failures
+- handoff runbooks and review queues
+- FastAPI service and Docker deployment artifacts
+
+See:
+- `claude_workflows/`
+- `evals/promptfoo/`
+- `evals/ragas/`
+- `runtime_telemetry/`
+- `handoff/`
+- `api/`
+- `deployment/`

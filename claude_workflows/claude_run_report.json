@@ -1,0 +1,84 @@
+{
+  "workflow": "claude_style_tool_use",
+  "runs": 2,
+  "results": [
+    {
+      "request_id": "claude_001",
+      "plan": [
+        "search_knowledge_base",
+        "summarize_issue",
+        "classify_priority",
+        "validate_claim",
+        "generate_handoff_note"
+      ],
+      "tool_outputs": {
+        "docs": {
+          "docs": [
+            "runbook: retrieval miss",
+            "policy: human review required"
+          ],
+          "retrieval_hit": true
+        },
+        "summary": {
+          "summary": "Investigate missing retrieval context and create a handoff note.",
+          "risk": "medium"
+        },
+        "priority": {
+          "priority": "medium"
+        },
+        "handoff": {
+          "handoff_note": "Priority medium: Investigate missing retrieval context and create a handoff note."
+        }
+      },
+      "structured_output": {
+        "summary": "Investigate missing retrieval context and create a handoff note.",
+        "priority": "medium",
+        "handoff_note": "Priority medium: Investigate missing retrieval context and create a handoff note."
+      },
+      "validation": {
+        "grounded": true,
+        "human_review_required": false
+      },
+      "decision": "ship"
+    },
+    {
+      "request_id": "claude_002",
+      "plan": [
+        "search_knowledge_base",
+        "summarize_issue",
+        "classify_priority",
+        "validate_claim",
+        "generate_handoff_note"
+      ],
+      "tool_outputs": {
+        "docs": {
+          "docs": [
+            "runbook: retrieval miss",
+            "policy: human review required"
+          ],
+          "retrieval_hit": true
+        },
+        "summary": {
+          "summary": "Summarize unsafe operational claim and validate grounding.",
+          "risk": "medium"
+        },
+        "priority": {
+          "priority": "high"
+        },
+        "handoff": {
+          "handoff_note": "Priority high: Summarize unsafe operational claim and validate grounding."
+        }
+      },
+      "structured_output": {
+        "summary": "Summarize unsafe operational claim and validate grounding.",
+        "priority": "high",
+        "handoff_note": "Priority high: Summarize unsafe operational claim and validate grounding."
+      },
+      "validation": {
+        "grounded": false,
+        "human_review_required": true
+      },
+      "decision": "human_review"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+description: AgentGrid promptfoo-style evaluation gate
+providers:
+  - id: deterministic-agentgrid
+tests: test_cases.yaml
