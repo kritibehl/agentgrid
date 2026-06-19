@@ -1,6 +1,6 @@
 # AgentGrid
 
-**Production-style agent orchestration with retrieval, tools, evaluation gates, and human review.**
+**Production-style agent orchestration with retrieval, tools, evaluation gates and human review.**
 
 `Python` · `FastAPI` · `React` · `TypeScript` · `Redis` · `Prometheus`
 
