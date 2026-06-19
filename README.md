@@ -213,10 +213,10 @@ See:
 
 AgentGrid includes an analytics warehouse layer for AI workflow reporting:
 
-- warehouse tables for runs, users, tools, retrieval events, eval scores, and tool calls
-- SQL reports for DAU/WAU-style usage, failure rate, latency by workflow version, retrieval quality, and eval quality
+- warehouse tables for runs, users, tools, retrieval events, eval scores and tool calls
+- SQL reports for DAU/WAU-style usage, failure rate, latency by workflow version, retrieval quality and eval quality
 - generated CSV and HTML dashboard reports
-- data quality checks for nulls, freshness, and schema validity
+- data quality checks for nulls, freshness and schema validity
 
 See:
 - `analytics_warehouse/`
@@ -246,7 +246,7 @@ AgentGrid includes a focused agentic AI workflow layer covering:
 - validation and human-review routing
 - Promptfoo-style evaluation gates
 - RAGAS-style RAG evaluation
-- runtime telemetry for tokens, cost, latency, tools, retries, and failures
+- runtime telemetry for tokens, cost, latency, tools, retries and failures
 - handoff runbooks and review queues
 - FastAPI service and Docker deployment artifacts
 
