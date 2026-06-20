@@ -1,0 +1,37 @@
+{
+  "workflow": "ai_authoring_workflow",
+  "input": {
+    "user_context": "Summarize support-risk trends for an AI workflow release.",
+    "required_sections": [
+      "summary",
+      "evidence",
+      "risks",
+      "recommendation"
+    ]
+  },
+  "steps": [
+    "retrieve_context",
+    "draft_structured_report",
+    "validate_groundedness",
+    "eval_gate",
+    "human_review_if_needed"
+  ],
+  "output": {
+    "summary": "Release quality improved after agent_v2, but unsupported claims still require review.",
+    "evidence": [
+      "eval pass rate increased",
+      "cost per run decreased",
+      "human review catches unsupported claims"
+    ],
+    "risks": [
+      "retrieval drift",
+      "tool timeout"
+    ],
+    "recommendation": "ship with monitoring"
+  },
+  "eval_gate": {
+    "groundedness": "pass",
+    "unsupported_claims": "none",
+    "decision": "ship"
+  }
+}

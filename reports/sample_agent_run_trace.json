@@ -1,0 +1,44 @@
+{
+  "trace_id": "ag_trace_001",
+  "workflow": "ai_support_triage",
+  "input": "The agent gave an unsupported deployment fix.",
+  "steps": [
+    {
+      "stage": "classify",
+      "output": "support_incident"
+    },
+    {
+      "stage": "retrieve",
+      "retrieval_hit": true,
+      "docs": [
+        "runbook: missing evidence requires hold"
+      ]
+    },
+    {
+      "stage": "tool_call",
+      "tool": "validate_claim",
+      "status": "success",
+      "latency_ms": 120
+    },
+    {
+      "stage": "structured_answer",
+      "schema_valid": true
+    },
+    {
+      "stage": "eval_gate",
+      "decision": "hold",
+      "reason": "unsupported_fix_claim"
+    },
+    {
+      "stage": "human_review",
+      "status": "queued",
+      "owner": "support_reviewer"
+    }
+  ],
+  "metrics": {
+    "retrieval_hit_rate": 1.0,
+    "tool_success": true,
+    "latency_ms": 820,
+    "estimated_cost": 0.0145
+  }
+}
