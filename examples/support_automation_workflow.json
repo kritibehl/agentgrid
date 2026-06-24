@@ -1,0 +1,41 @@
+{
+  "workflow": "support_automation",
+  "input": {
+    "issue_id": "issue_001",
+    "customer_context": "User reports that the AI support answer recommended a deployment fix without evidence.",
+    "channel": "support_portal"
+  },
+  "steps": [
+    {
+      "stage": "issue_triage",
+      "output": "unsupported_ai_answer"
+    },
+    {
+      "stage": "knowledge_retrieval",
+      "retrieval_hit": true,
+      "retrieved_docs": [
+        "runbook: unsupported claims require human review",
+        "policy: deployment actions require evidence and owner approval"
+      ]
+    },
+    {
+      "stage": "agent_action",
+      "draft_next_action": "Hold the response, remove unsupported deployment certainty, and route to reviewer."
+    },
+    {
+      "stage": "eval_gate",
+      "checks": {
+        "groundedness": "pass",
+        "completeness": "pass",
+        "safety": "pass"
+      },
+      "decision": "escalate_to_human_review"
+    },
+    {
+      "stage": "feedback_loop",
+      "answer_helped": true,
+      "reviewer_feedback": "Correctly identified unsupported claim and routed to review."
+    }
+  ],
+  "release_decision": "hold_for_review"
+}

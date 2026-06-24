@@ -1,0 +1,16 @@
+{
+  "issue_id": "issue_001",
+  "raw_issue": "The support agent told us to restart the deployment pipeline, but it did not cite a runbook or logs.",
+  "classification": {
+    "issue_type": "unsupported_operational_recommendation",
+    "severity": "medium",
+    "requires_human_review": true,
+    "escalation_path": "support_reviewer_queue"
+  },
+  "structured_fields": {
+    "customer_impact": "uncertain",
+    "missing_evidence": true,
+    "unsafe_action_risk": true,
+    "recommended_action": "hold_response_and_request_evidence"
+  }
+}
