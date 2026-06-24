@@ -258,3 +258,26 @@ See:
 - `handoff/`
 - `api/`
 - `deployment/`
+
+
+## AgentGrid Support Automation Demo
+
+AgentGrid includes a support-automation workflow showing how customer/internal issues become structured AI workflows:
+
+issue intake
+→ knowledge retrieval
+→ issue classification
+→ next action / escalation draft
+→ eval gate
+→ human review
+→ feedback loop
+
+See:
+
+- examples/support_automation_workflow.json
+- examples/customer_issue_triage.json
+- examples/knowledge_retrieval_trace.json
+- reports/support_automation_eval_report.md
+- reports/feedback_loop_quality_report.md
+- docs/cooperative_ai_use_case.md
+- docs/support_automation_architecture.md
