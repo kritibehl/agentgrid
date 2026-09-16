@@ -1,0 +1,24 @@
+{
+  "gateway": "agentgrid_mcp_gateway",
+  "tool_count": 3,
+  "healthy_tools": 3,
+  "avg_latency_ms": 121.0,
+  "tools": [
+    {
+      "tool": "fleet_query",
+      "latency_ms": 120,
+      "status": "healthy"
+    },
+    {
+      "tool": "workflow_trigger",
+      "latency_ms": 145,
+      "status": "healthy"
+    },
+    {
+      "tool": "incident_lookup",
+      "latency_ms": 98,
+      "status": "healthy"
+    }
+  ],
+  "status": "healthy"
+}

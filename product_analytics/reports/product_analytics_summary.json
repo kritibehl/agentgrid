@@ -1,0 +1,97 @@
+{
+  "dau_wau": [
+    {
+      "wau": 5,
+      "weekly_events": 13
+    }
+  ],
+  "funnel_conversion": {
+    "signed_up": 5,
+    "activated": 5,
+    "completed": 3,
+    "activation_rate": 1.0,
+    "completion_rate": 0.6
+  },
+  "cohort_retention": [
+    {
+      "cohort_date": "2026-05-20",
+      "cohort_users": 2,
+      "retained_users": 1,
+      "retention_rate": 0.5
+    },
+    {
+      "cohort_date": "2026-05-21",
+      "cohort_users": 1,
+      "retained_users": 0,
+      "retention_rate": 0.0
+    },
+    {
+      "cohort_date": "2026-05-22",
+      "cohort_users": 1,
+      "retained_users": 0,
+      "retention_rate": 0.0
+    },
+    {
+      "cohort_date": "2026-05-25",
+      "cohort_users": 1,
+      "retained_users": 0,
+      "retention_rate": 0.0
+    }
+  ],
+  "agent_adoption_by_segment": [
+    {
+      "segment": "enterprise",
+      "users": 2,
+      "agent_runs": 2,
+      "workflow_completion_rate": 1.0,
+      "tool_success_rate": 1.0,
+      "avg_quality_score": 0.835
+    },
+    {
+      "segment": "startup",
+      "users": 2,
+      "agent_runs": 2,
+      "workflow_completion_rate": 0.5,
+      "tool_success_rate": 0.5,
+      "avg_quality_score": 0.735
+    },
+    {
+      "segment": "student",
+      "users": 1,
+      "agent_runs": 1,
+      "workflow_completion_rate": 1.0,
+      "tool_success_rate": 1.0,
+      "avg_quality_score": 0.89
+    }
+  ],
+  "experiment_lift": [
+    {
+      "experiment_group": "A",
+      "workflow_version": "agent_v1",
+      "runs": 2,
+      "completion_rate": 0.5,
+      "tool_success_rate": 0.5,
+      "eval_pass_rate": 0.5,
+      "avg_quality_score": 0.685
+    },
+    {
+      "experiment_group": "B",
+      "workflow_version": "agent_v2",
+      "runs": 3,
+      "completion_rate": 1.0,
+      "tool_success_rate": 1.0,
+      "eval_pass_rate": 1.0,
+      "avg_quality_score": 0.887
+    }
+  ],
+  "metrics_tracked": [
+    "DAU",
+    "WAU",
+    "activation funnel",
+    "workflow completion rate",
+    "tool success rate",
+    "retention by user segment",
+    "experiment lift",
+    "quality improvement after workflow change"
+  ]
+}

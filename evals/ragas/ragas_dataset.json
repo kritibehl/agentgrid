@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why did retrieval fail?",
+    "answer": "Missing context triggered hold.",
+    "contexts": [
+      "retrieval miss policy"
+    ],
+    "ground_truth": "hold on missing context"
+  }
+]

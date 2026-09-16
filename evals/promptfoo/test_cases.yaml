@@ -1,0 +1,6 @@
+tests:
+  - vars:
+      input: Validate unsupported deployment claim
+    assert:
+      - type: contains
+        value: human_review

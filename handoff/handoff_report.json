@@ -1,0 +1,14 @@
+{
+  "queue_size": 1,
+  "items": [
+    {
+      "handoff_id": "handoff_001",
+      "agent_output": "Missing retrieval context detected.",
+      "risk_score": 0.72,
+      "review_status": "needs_review",
+      "owner": "support_reviewer",
+      "runbook_note": "Validate retrieved evidence before release."
+    }
+  ],
+  "decision": "route_to_human_review"
+}

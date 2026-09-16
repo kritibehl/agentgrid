@@ -1,0 +1,40 @@
+{
+  "users": [
+    {"user_id": "u_001", "account_type": "builder", "created_at": "2026-05-01"},
+    {"user_id": "u_002", "account_type": "reviewer", "created_at": "2026-05-02"},
+    {"user_id": "u_003", "account_type": "builder", "created_at": "2026-05-03"}
+  ],
+  "tools": [
+    {"tool_id": "t_001", "tool_name": "search_docs", "tool_type": "retrieval", "enabled": 1},
+    {"tool_id": "t_002", "tool_name": "query_metrics", "tool_type": "observability", "enabled": 1},
+    {"tool_id": "t_003", "tool_name": "fleet_query", "tool_type": "mcp_gateway", "enabled": 1}
+  ],
+  "runs": [
+    {"run_id": "r_001", "user_id": "u_001", "workflow_version": "agent_v1", "workflow_name": "rag_support", "status": "ship", "latency_ms": 940, "created_at": "2026-05-20"},
+    {"run_id": "r_002", "user_id": "u_001", "workflow_version": "agent_v1", "workflow_name": "rag_support", "status": "hold", "latency_ms": 980, "created_at": "2026-05-21"},
+    {"run_id": "r_003", "user_id": "u_002", "workflow_version": "agent_v2", "workflow_name": "rag_support", "status": "ship", "latency_ms": 820, "created_at": "2026-05-24"},
+    {"run_id": "r_004", "user_id": "u_003", "workflow_version": "agent_v2", "workflow_name": "entity_search", "status": "ship", "latency_ms": 610, "created_at": "2026-05-25"},
+    {"run_id": "r_005", "user_id": "u_003", "workflow_version": "agent_v2", "workflow_name": "mcp_gateway", "status": "escalate", "latency_ms": 760, "created_at": "2026-05-26"}
+  ],
+  "retrieval_events": [
+    {"event_id": "re_001", "run_id": "r_001", "query": "deployment failure", "retrieval_hit": 1, "retrieved_doc_count": 2, "created_at": "2026-05-20"},
+    {"event_id": "re_002", "run_id": "r_002", "query": "missing context", "retrieval_hit": 0, "retrieved_doc_count": 0, "created_at": "2026-05-21"},
+    {"event_id": "re_003", "run_id": "r_003", "query": "runbook search", "retrieval_hit": 1, "retrieved_doc_count": 3, "created_at": "2026-05-24"},
+    {"event_id": "re_004", "run_id": "r_004", "query": "coffee places", "retrieval_hit": 1, "retrieved_doc_count": 3, "created_at": "2026-05-25"},
+    {"event_id": "re_005", "run_id": "r_005", "query": "fleet status", "retrieval_hit": 1, "retrieved_doc_count": 1, "created_at": "2026-05-26"}
+  ],
+  "eval_scores": [
+    {"eval_id": "ev_001", "run_id": "r_001", "groundedness_score": 0.86, "hallucination_risk": 0.07, "eval_decision": "ship", "created_at": "2026-05-20"},
+    {"eval_id": "ev_002", "run_id": "r_002", "groundedness_score": 0.52, "hallucination_risk": 0.21, "eval_decision": "hold", "created_at": "2026-05-21"},
+    {"eval_id": "ev_003", "run_id": "r_003", "groundedness_score": 0.91, "hallucination_risk": 0.04, "eval_decision": "ship", "created_at": "2026-05-24"},
+    {"eval_id": "ev_004", "run_id": "r_004", "groundedness_score": 0.94, "hallucination_risk": 0.03, "eval_decision": "ship", "created_at": "2026-05-25"},
+    {"eval_id": "ev_005", "run_id": "r_005", "groundedness_score": 0.73, "hallucination_risk": 0.12, "eval_decision": "escalate", "created_at": "2026-05-26"}
+  ],
+  "tool_calls": [
+    {"call_id": "tc_001", "run_id": "r_001", "tool_id": "t_001", "tool_success": 1, "latency_ms": 120, "created_at": "2026-05-20"},
+    {"call_id": "tc_002", "run_id": "r_002", "tool_id": "t_001", "tool_success": 0, "latency_ms": 410, "created_at": "2026-05-21"},
+    {"call_id": "tc_003", "run_id": "r_003", "tool_id": "t_002", "tool_success": 1, "latency_ms": 140, "created_at": "2026-05-24"},
+    {"call_id": "tc_004", "run_id": "r_004", "tool_id": "t_001", "tool_success": 1, "latency_ms": 95, "created_at": "2026-05-25"},
+    {"call_id": "tc_005", "run_id": "r_005", "tool_id": "t_003", "tool_success": 1, "latency_ms": 120, "created_at": "2026-05-26"}
+  ]
+}

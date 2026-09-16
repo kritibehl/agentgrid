@@ -1,6 +1,6 @@
 # AgentGrid
 
-**Production-style agent orchestration with retrieval, tools, evaluation gates, and human review.**
+**Production-style agent orchestration with retrieval, tools, evaluation gates and human review.**
 
 `Python` · `FastAPI` · `React` · `TypeScript` · `Redis` · `Prometheus`
 
@@ -192,3 +192,92 @@ AgentGrid includes agent-version benchmarking for RAG workflow releases:
 
 See:
 - `agent_version_benchmarking/`
+
+
+## MCP Gateway Infrastructure
+
+AgentGrid includes an MCP-style gateway layer for AI agents and workflow automation:
+
+- tool registry
+- tool health report
+- MCP call trace
+- fleet-style query tool
+- workflow trigger tool
+- incident lookup tool
+
+See:
+- `mcp_gateway/`
+
+
+## Analytics Warehouse
+
+AgentGrid includes an analytics warehouse layer for AI workflow reporting:
+
+- warehouse tables for runs, users, tools, retrieval events, eval scores and tool calls
+- SQL reports for DAU/WAU-style usage, failure rate, latency by workflow version, retrieval quality and eval quality
+- generated CSV and HTML dashboard reports
+- data quality checks for nulls, freshness and schema validity
+
+See:
+- `analytics_warehouse/`
+
+
+## Product Analytics
+
+AgentGrid includes product analytics workflows for AI-agent usage:
+
+- DAU / WAU reporting
+- activation funnel conversion
+- cohort retention
+- agent adoption by segment
+- experiment A/B lift
+- workflow completion rate
+- quality improvement after workflow changes
+
+See:
+- `product_analytics/`
+
+## Agentic AI Workflow Platform Layer
+
+AgentGrid includes a focused agentic AI workflow layer covering:
+
+- Claude-style tool-use workflows
+- structured JSON outputs
+- validation and human-review routing
+- Promptfoo-style evaluation gates
+- RAGAS-style RAG evaluation
+- runtime telemetry for tokens, cost, latency, tools, retries and failures
+- handoff runbooks and review queues
+- FastAPI service and Docker deployment artifacts
+
+See:
+- `claude_workflows/`
+- `evals/promptfoo/`
+- `evals/ragas/`
+- `runtime_telemetry/`
+- `handoff/`
+- `api/`
+- `deployment/`
+
+
+## AgentGrid Support Automation Demo
+
+AgentGrid includes a support-automation workflow showing how customer/internal issues become structured AI workflows:
+
+issue intake
+→ knowledge retrieval
+→ issue classification
+→ next action / escalation draft
+→ eval gate
+→ human review
+→ feedback loop
+
+See:
+
+- examples/support_automation_workflow.json
+- examples/customer_issue_triage.json
+- examples/knowledge_retrieval_trace.json
+- reports/support_automation_eval_report.md
+- reports/feedback_loop_quality_report.md
+- docs/cooperative_ai_use_case.md
+- docs/support_automation_architecture.md

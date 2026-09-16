@@ -1,0 +1,9 @@
+{
+  "required": [
+    "handoff_id",
+    "risk_score",
+    "review_status",
+    "owner",
+    "runbook_note"
+  ]
+}

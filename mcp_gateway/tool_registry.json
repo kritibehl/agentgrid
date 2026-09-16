@@ -1,0 +1,41 @@
+{
+  "gateway": "agentgrid_mcp_gateway",
+  "tools": [
+    {
+      "tool": "fleet_query",
+      "description": "Query fleet-style operational status signals",
+      "input_schema": {
+        "fleet_id": "string",
+        "metric": "string"
+      },
+      "output_schema": {
+        "value": "number",
+        "status": "string"
+      }
+    },
+    {
+      "tool": "workflow_trigger",
+      "description": "Trigger workflow automation for support or operations cases",
+      "input_schema": {
+        "workflow_id": "string",
+        "trace_id": "string"
+      },
+      "output_schema": {
+        "triggered": "boolean",
+        "workflow_status": "string"
+      }
+    },
+    {
+      "tool": "incident_lookup",
+      "description": "Retrieve incident context and escalation state",
+      "input_schema": {
+        "incident_id": "string"
+      },
+      "output_schema": {
+        "severity": "string",
+        "owner": "string",
+        "status": "string"
+      }
+    }
+  ]
+}

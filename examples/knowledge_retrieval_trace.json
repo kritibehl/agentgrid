@@ -1,0 +1,21 @@
+{
+  "trace_id": "retrieval_trace_001",
+  "query": "unsupported deployment fix without evidence",
+  "retrieval_events": [
+    {
+      "doc_id": "kb_001",
+      "title": "Unsupported Claims Review Policy",
+      "score": 0.94,
+      "used_in_answer": true
+    },
+    {
+      "doc_id": "kb_002",
+      "title": "Deployment Action Approval Runbook",
+      "score": 0.89,
+      "used_in_answer": true
+    }
+  ],
+  "retrieval_hit": true,
+  "retrieved_doc_count": 2,
+  "retrieval_latency_ms": 128
+}

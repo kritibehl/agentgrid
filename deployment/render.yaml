@@ -1,0 +1,5 @@
+services:
+  - type: web
+    name: agentgrid-api
+    env: docker
+    plan: free
