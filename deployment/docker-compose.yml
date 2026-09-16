@@ -1,7 +1,0 @@
-services:
-  agentgrid-api:
-    build:
-      context: ..
-      dockerfile: deployment/Dockerfile
-    ports:
-      - "8080:8080"
