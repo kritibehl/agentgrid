@@ -253,7 +253,7 @@ def main():
         f"| Uncontained injected failures | {baseline['uncontained_injected_failures']} | "
         f"{agentgrid['uncontained_injected_failures']} |\n"
         f"| Unsupported outputs shipped | {baseline['unsupported_outputs_shipped']} | "
-        f"{agentgrid['unsupported_outputs_shipped']} |\\n"
+        f"{agentgrid['unsupported_outputs_shipped']} |\n"
         f"| Retrieval failures caught | {baseline['retrieval_failures_caught']} | "
         f"{agentgrid['retrieval_failures_caught']} |\n"
         f"| Tool failures safely handled | {baseline['tool_failures_safely_handled']} | "

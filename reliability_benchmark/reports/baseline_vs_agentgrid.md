@@ -9,7 +9,8 @@ Benchmark an ungated agent against AgentGrid under the same adversarial failure 
 | Metric | Baseline | AgentGrid |
 |---|---:|---:|
 | Uncontained injected failures | 13 | 0 |
-| Unsupported outputs shipped | 10 | 0 |\n| Retrieval failures caught | 0 | 5 |
+| Unsupported outputs shipped | 10 | 0 |
+| Retrieval failures caught | 0 | 5 |
 | Tool failures safely handled | 0 | 5 |
 | Grounding failures caught | 0 | 10 |
 | Successful transient recoveries | 0 | 1 |
