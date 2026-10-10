@@ -1,0 +1,51 @@
+{
+  "suite": "adversarial-v1",
+  "scope": {
+    "failure_results": "deterministic fault-injection benchmark",
+    "latency": "modeled",
+    "tokens": "modeled",
+    "cost": "modeled; not provider billing data"
+  },
+  "baseline": {
+    "cases": 14,
+    "uncontained_injected_failures": 13,
+    "unsupported_outputs_shipped": 10,
+    "retrieval_failures_caught": 0,
+    "tool_failures_safely_handled": 0,
+    "grounding_failures_caught": 0,
+    "successful_transient_recoveries": 0,
+    "gate_precision": 0,
+    "gate_recall": 0.0,
+    "false_escalation_rate": 0.0,
+    "false_negative_rate": 1.0,
+    "route_accuracy": 0.1429,
+    "p50_latency_ms": 600.0,
+    "p95_latency_ms": 600,
+    "avg_tokens": 700,
+    "avg_estimated_cost_usd": 0.0028
+  },
+  "agentgrid": {
+    "cases": 14,
+    "uncontained_injected_failures": 0,
+    "unsupported_outputs_shipped": 0,
+    "retrieval_failures_caught": 5,
+    "tool_failures_safely_handled": 5,
+    "grounding_failures_caught": 10,
+    "successful_transient_recoveries": 1,
+    "gate_precision": 1.0,
+    "gate_recall": 1.0,
+    "false_escalation_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "route_accuracy": 1.0,
+    "p50_latency_ms": 690.0,
+    "p95_latency_ms": 930,
+    "avg_tokens": 820,
+    "avg_estimated_cost_usd": 0.0033
+  },
+  "tradeoffs": {
+    "failure_escapes_prevented": 13,
+    "p95_gate_overhead_ms": 330,
+    "avg_token_overhead": 120,
+    "avg_cost_overhead_usd": 0.0005
+  }
+}

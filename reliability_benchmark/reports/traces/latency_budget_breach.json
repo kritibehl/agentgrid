@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0012",
+  "scenario": "latency_budget_breach",
+  "failure_type": "latency_budget",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.96,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "success",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": true,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "HOLD",
+      "reason": "latency_budget",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 2890,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "HOLD",
+  "decision_reason": "latency_budget"
+}

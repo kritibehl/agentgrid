@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0003",
+  "scenario": "contradictory_documents",
+  "failure_type": "contradictory_context",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.92,
+      "contradiction": true,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "not_called",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "ESCALATE",
+      "reason": "contradictory_context",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "ESCALATE",
+  "decision_reason": "contradictory_context"
+}

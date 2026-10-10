@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0013",
+  "scenario": "partial_service_failure",
+  "failure_type": "partial_service_failure",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.93,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "partial_failure",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "ESCALATE",
+      "reason": "partial_failure",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "ESCALATE",
+  "decision_reason": "partial_failure"
+}

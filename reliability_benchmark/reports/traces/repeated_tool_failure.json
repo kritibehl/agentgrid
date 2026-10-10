@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0009",
+  "scenario": "repeated_tool_failure",
+  "failure_type": "repeated_tool_failure",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.9,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "failed",
+      "attempts": 3,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "ESCALATE",
+      "reason": "failed",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "ESCALATE",
+  "decision_reason": "failed"
+}
