@@ -1,5 +1,46 @@
 # AgentGrid
 
+<!-- AGENTGRID_RELIABILITY_HERO -->
+
+## AgentGrid — AI Reliability Platform for Agentic Workflows
+
+AgentGrid tests whether agentic AI workflows can survive retrieval, tool, grounding, schema, and latency failures without silently releasing invalid output.
+
+**Ungated baseline**
+
+    retrieve -> generate -> return
+
+**AgentGrid**
+
+    retrieve -> tools -> evaluate -> SHIP / HOLD / RETRY / ESCALATE
+
+### Adversarial Reliability Benchmark
+
+The deterministic `adversarial-v1` suite injects retrieval misses, irrelevant and contradictory context, stale and poisoned knowledge, transient and repeated tool failures, malformed tool results, unsupported claims, schema failures, latency-budget breaches, and partial dependency failures.
+
+AgentGrid measures failure escapes, unsupported outputs, retrieval and grounding containment, tool recovery, gate precision/recall, false escalation, and modeled latency/token/cost overhead.
+
+Each run also produces an explainable execution trace across:
+
+    retrieval -> tool -> model -> evaluation -> terminal route
+
+### Real MCP Tooling
+
+AgentGrid exposes and invokes operational tools through the Model Context Protocol:
+
+- `search_docs`
+- `analyze_logs`
+- `query_metrics`
+- `create_action_plan`
+
+Run the full demonstration with:
+
+    make demo
+
+> Scope: `adversarial-v1` is deterministic local fault injection. Latency, token, and cost figures are modeled values, not live-provider measurements.
+
+
+
 **Production-style agent orchestration with retrieval, tools, evaluation gates and human review.**
 
 `Python` · `FastAPI` · `React` · `TypeScript` · `Redis` · `Prometheus`
