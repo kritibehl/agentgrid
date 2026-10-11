@@ -127,14 +127,14 @@ git clone https://github.com/kritibehl/agentgrid && cd agentgrid
 pip install -r requirements.txt
 make demo    # full agent workflow run
 make eval    # eval suite → reports/latest/agent_reliability_scorecard.json
-make test    # 57 tests
+make test    # 53 tests
 ```
 
 ## Tests
 
 ```bash
 make test
-# → 57 tests passing
+# → 53 tests passing
 # Retrieval hit rate: 0.80 · Tool success rate: 0.80 · p95 latency: 880ms
 ```
 
