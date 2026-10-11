@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0001",
+  "scenario": "missing_retrieval",
+  "failure_type": "retrieval_miss",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "miss",
+      "relevance": null,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "not_called",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "HOLD",
+      "reason": "retrieval_miss",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "HOLD",
+  "decision_reason": "retrieval_miss"
+}

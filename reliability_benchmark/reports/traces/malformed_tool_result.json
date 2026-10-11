@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0007",
+  "scenario": "malformed_tool_result",
+  "failure_type": "malformed_tool_result",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.93,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "malformed",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "HOLD",
+      "reason": "malformed_tool_result",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "HOLD",
+  "decision_reason": "malformed_tool_result"
+}

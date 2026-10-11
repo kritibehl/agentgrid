@@ -1,0 +1,40 @@
+name: AgentGrid Reliability Gate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reliability:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Run reliability invariants
+        run: |
+          python -m pytest -q tests/test_reliability_benchmark.py
+          python -m pytest -q tests/test_real_mcp.py
+
+      - name: Run adversarial benchmark
+        run: |
+          python -m reliability_benchmark.cli benchmark --suite adversarial-v1
+
+      - name: Generate traces
+        run: |
+          python -m reliability_benchmark.generate_traces
+
+      - name: Show reliability report
+        run: |
+          cat reliability_benchmark/reports/baseline_vs_agentgrid.md

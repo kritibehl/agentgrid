@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0004",
+  "scenario": "stale_runbook",
+  "failure_type": "stale_context",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.89,
+      "contradiction": false,
+      "stale": true,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "not_called",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "HOLD",
+      "reason": "stale_context",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "HOLD",
+  "decision_reason": "stale_context"
+}

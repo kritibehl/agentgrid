@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 .DS_Store
 *.sqlite
+
+# Local provider credentials
+.env
+.env.*
+!.env.example

@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0011",
+  "scenario": "schema_failure",
+  "failure_type": "schema_failure",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.93,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "success",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": true,
+      "schema_valid": false
+    },
+    {
+      "span": "evaluation",
+      "route": "HOLD",
+      "reason": "schema_failure",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "HOLD",
+  "decision_reason": "schema_failure"
+}

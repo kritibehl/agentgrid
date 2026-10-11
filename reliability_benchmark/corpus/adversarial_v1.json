@@ -1,0 +1,146 @@
+[
+  {
+    "id": "missing_retrieval",
+    "failure_type": "retrieval_miss",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {"status": "miss"},
+    "tool": {"status": "not_called"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "irrelevant_context",
+    "failure_type": "irrelevant_context",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {"status": "hit", "relevance": 0.11},
+    "tool": {"status": "not_called"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "contradictory_documents",
+    "failure_type": "contradictory_context",
+    "expected_intervention": true,
+    "expected_terminal_route": "ESCALATE",
+    "retrieval": {
+      "status": "hit",
+      "relevance": 0.92,
+      "contradiction": true
+    },
+    "tool": {"status": "not_called"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "stale_runbook",
+    "failure_type": "stale_context",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {
+      "status": "hit",
+      "relevance": 0.89,
+      "stale": true
+    },
+    "tool": {"status": "not_called"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "poisoned_context",
+    "failure_type": "poisoned_context",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {
+      "status": "hit",
+      "relevance": 0.96,
+      "poisoned": true
+    },
+    "tool": {"status": "not_called"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "transient_tool_timeout",
+    "failure_type": "tool_timeout",
+    "expected_intervention": true,
+    "expected_terminal_route": "SHIP",
+    "retrieval": {"status": "hit", "relevance": 0.94},
+    "tool": {
+      "status": "timeout",
+      "retryable": true,
+      "retry_result": "success"
+    },
+    "model": {"supported": true, "schema_valid": true}
+  },
+  {
+    "id": "malformed_tool_result",
+    "failure_type": "malformed_tool_result",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {"status": "hit", "relevance": 0.93},
+    "tool": {"status": "malformed"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "tool_exception",
+    "failure_type": "tool_exception",
+    "expected_intervention": true,
+    "expected_terminal_route": "ESCALATE",
+    "retrieval": {"status": "hit", "relevance": 0.91},
+    "tool": {"status": "exception"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "repeated_tool_failure",
+    "failure_type": "repeated_tool_failure",
+    "expected_intervention": true,
+    "expected_terminal_route": "ESCALATE",
+    "retrieval": {"status": "hit", "relevance": 0.90},
+    "tool": {"status": "failed", "attempts": 3},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "unsupported_claim",
+    "failure_type": "unsupported_claim",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {"status": "hit", "relevance": 0.95},
+    "tool": {"status": "success"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "schema_failure",
+    "failure_type": "schema_failure",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {"status": "hit", "relevance": 0.93},
+    "tool": {"status": "success"},
+    "model": {"supported": true, "schema_valid": false}
+  },
+  {
+    "id": "latency_budget_breach",
+    "failure_type": "latency_budget",
+    "expected_intervention": true,
+    "expected_terminal_route": "HOLD",
+    "retrieval": {"status": "hit", "relevance": 0.96},
+    "tool": {"status": "success"},
+    "model": {"supported": true, "schema_valid": true},
+    "latency_ms": 2800,
+    "latency_budget_ms": 1500
+  },
+  {
+    "id": "partial_service_failure",
+    "failure_type": "partial_service_failure",
+    "expected_intervention": true,
+    "expected_terminal_route": "ESCALATE",
+    "retrieval": {"status": "hit", "relevance": 0.93},
+    "tool": {"status": "partial_failure"},
+    "model": {"supported": false, "schema_valid": true}
+  },
+  {
+    "id": "healthy_request",
+    "failure_type": "none",
+    "expected_intervention": false,
+    "expected_terminal_route": "SHIP",
+    "retrieval": {"status": "hit", "relevance": 0.96},
+    "tool": {"status": "success"},
+    "model": {"supported": true, "schema_valid": true}
+  }
+]

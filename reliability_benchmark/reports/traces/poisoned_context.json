@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0005",
+  "scenario": "poisoned_context",
+  "failure_type": "poisoned_context",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.96,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": true
+    },
+    {
+      "span": "tool",
+      "status": "not_called",
+      "attempts": null,
+      "retryable": false
+    },
+    {
+      "span": "model",
+      "supported": false,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "HOLD",
+      "reason": "poisoned_context",
+      "recovered": false
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 690,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "HOLD",
+  "decision_reason": "poisoned_context"
+}

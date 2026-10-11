@@ -1,0 +1,39 @@
+{
+  "trace_id": "ag-0006",
+  "scenario": "transient_tool_timeout",
+  "failure_type": "tool_timeout",
+  "workflow": [
+    {
+      "span": "retrieval",
+      "status": "hit",
+      "relevance": 0.94,
+      "contradiction": false,
+      "stale": false,
+      "poisoned": false
+    },
+    {
+      "span": "tool",
+      "status": "timeout",
+      "attempts": null,
+      "retryable": true
+    },
+    {
+      "span": "model",
+      "supported": true,
+      "schema_valid": true
+    },
+    {
+      "span": "evaluation",
+      "route": "SHIP",
+      "reason": "recovered_after_retry",
+      "recovered": true
+    }
+  ],
+  "telemetry": {
+    "latency_ms": 930,
+    "modeled_tokens": 820,
+    "modeled_cost_usd": 0.0033
+  },
+  "final_route": "SHIP",
+  "decision_reason": "recovered_after_retry"
+}

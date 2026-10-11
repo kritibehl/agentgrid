@@ -2,3 +2,8 @@ langgraph>=0.2.0
 langchain-core>=0.3.0
 pydantic>=2.7.0
 pytest>=8.0.0
+mcp[cli]>=2,<3
+openai
+anthropic
+google-genai
+python-dotenv
