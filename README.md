@@ -55,7 +55,7 @@ Run the full demonstration with:
 
 **Impact:** AI systems that look correct in demos fail on real queries. Without eval gates and escalation routing, bad outputs reach users with no mechanism for detection or review.
 
-**Proof:** Full orchestration pipeline with per-stage metrics, eval gates, and human review routing. Retrieval hit rate 80%, tool success rate 80%, p95 latency 880ms — all measured and gated per run, resulting in a `HOLD` decision rather than a ship.
+**Proof:** Full orchestration pipeline with per-stage metrics, eval gates, and human review routing. On a 5-request demo run (`agent_observability/escalation_trend_report.json`): retrieval hit rate 80% (4 of 5), tool success rate 80% (4 of 5), p95 latency 880 ms — gated to a `HOLD` release decision rather than a ship.
 
 ---
 
@@ -75,8 +75,8 @@ Run the full demonstration with:
 
 | Signal | Value |
 |---|---|
-| Retrieval Hit Rate | **80%** |
-| Tool Success Rate | **80%** |
+| Retrieval Hit Rate (5-request demo) | **80%** |
+| Tool Success Rate (5-request demo) | **80%** |
 | P95 Latency | **880ms** |
 | Human Review Gates | **Enabled** |
 
